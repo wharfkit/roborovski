@@ -76,4 +76,76 @@ suite('api', function () {
         assert.equal(test[0], 907)
         assert.equal(test[9], 898)
     })
+
+    test('get_filtered_actions (default, most recent)', async function () {
+        const res = await robo.get_filtered_actions('teamgreymass')
+        assert.isArray(res.actions)
+        assert.isTrue(res.actions.length <= 20) // Default limit is 20
+    })
+
+    test('get_filtered_actions (filter by contract)', async function () {
+        const res = await robo.get_filtered_actions('teamgreymass', {
+            contract: 'eosio.token',
+            limit: 10,
+        })
+        assert.isArray(res.actions)
+        // Verify all actions are from the specified contract
+        res.actions.forEach((action) => {
+            const act = action.action_trace.act
+            assert.equal(act.account, 'eosio.token')
+        })
+    })
+
+    test('get_filtered_actions (filter by action)', async function () {
+        const res = await robo.get_filtered_actions('teamgreymass', {
+            action: 'transfer',
+            limit: 10,
+        })
+        assert.isArray(res.actions)
+        // Verify all actions have the specified action name
+        res.actions.forEach((action) => {
+            const act = action.action_trace.act
+            assert.equal(act.name, 'transfer')
+        })
+    })
+
+    test('get_filtered_actions (filter by contract and action)', async function () {
+        const res = await robo.get_filtered_actions('teamgreymass', {
+            contract: 'eosio.token',
+            action: 'transfer',
+            limit: 10,
+        })
+        assert.isArray(res.actions)
+        // Verify all actions match both contract and action filters
+        res.actions.forEach((action) => {
+            const act = action.action_trace.act
+            assert.equal(act.account, 'eosio.token')
+            assert.equal(act.name, 'transfer')
+        })
+    })
+
+    test('get_filtered_actions (with custom pagination)', async function () {
+        const res = await robo.get_filtered_actions('teamgreymass', {
+            start: 0,
+            limit: 5,
+        })
+        assert.isArray(res.actions)
+        assert.isTrue(res.actions.length <= 5)
+    })
+
+    test('get_filtered_actions (reverse order)', async function () {
+        const res = await robo.get_filtered_actions('teamgreymass', {
+            contract: 'eosio.token',
+            limit: 10,
+            reverse: true,
+        })
+        assert.isArray(res.actions)
+        // Verify actions are in descending order
+        if (res.actions.length > 1) {
+            const seqs = res.actions.map((a) => Number(a.account_action_seq))
+            for (let i = 1; i < seqs.length; i++) {
+                assert.isTrue(seqs[i] < seqs[i - 1])
+            }
+        }
+    })
 })

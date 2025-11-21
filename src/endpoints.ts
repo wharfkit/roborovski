@@ -17,6 +17,14 @@ interface GetActionOptions {
     reverse?: boolean
 }
 
+interface GetFilteredActionsOptions {
+    contract?: NameType
+    action?: NameType
+    start?: Int32Type
+    limit?: Int32Type
+    reverse?: boolean
+}
+
 const defaultGetActionParams = {
     pos: Int32.from(-1),
     offset: Int32.from(-100),
@@ -78,5 +86,55 @@ export class RoborovskiClient {
             },
             responseType: API.v1.GetTransactionResponse,
         })
+    }
+
+    async get_filtered_actions(accountName: NameType, options?: GetFilteredActionsOptions) {
+        let reverse = options?.reverse
+
+        const params: Record<string, any> = {
+            account_name: Name.from(accountName),
+        }
+
+        // Add optional contract filter
+        if (options?.contract !== undefined) {
+            params['contract'] = Name.from(options.contract)
+        }
+
+        // Add optional action filter
+        if (options?.action !== undefined) {
+            params['action'] = Name.from(options.action)
+        }
+
+        if (options) {
+            if (options.start !== undefined) {
+                params['pos'] = Int32.from(options.start)
+            }
+            if (options.limit) {
+                params['offset'] = Int32.from(options.limit)
+            }
+            if (options.reverse && params['pos']) {
+                params['pos'] *= -1
+            }
+            if (options.reverse && params['offset']) {
+                params['offset'] *= -1
+            }
+        } else {
+            // Default to most recent 20 actions reversed (matching roborovski default)
+            params['pos'] = Int32.from(-1)
+            params['offset'] = Int32.from(-20)
+            reverse = true
+        }
+
+        const result = await this.client.call({
+            path: '/v1/history/get_filtered_actions',
+            params,
+            responseType: API.v1.GetActionsResponse,
+        })
+
+        if (reverse) {
+            result.actions.reverse()
+        }
+
+        return result
     }
 }
