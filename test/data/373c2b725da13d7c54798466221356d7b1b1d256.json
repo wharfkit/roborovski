@@ -1,0 +1,16 @@
+{
+    "request": {
+        "path": "http://localhost/v1/history/get_actions",
+        "params": {
+            "method": "POST",
+            "body": "{\"account_name\":\"eosio\",\"offset\":5}"
+        }
+    },
+    "status": 200,
+    "json": {
+        "actions": [],
+        "head_block_num": 1094662,
+        "last_irreversible_block": 1094662
+    },
+    "text": "{\"actions\":[],\"head_block_num\":1094662,\"last_irreversible_block\":1094662}"
+}
