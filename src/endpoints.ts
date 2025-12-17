@@ -111,7 +111,7 @@ export class RoborovskiClient {
         accountName: NameType,
         options?: GetActionOptions
     ): Promise<API.v1.GetActionsResponse> {
-        let reverse = options?.reverse
+        let reverse = options ? options.reverse : undefined
 
         const params: GetActionsParams = {
             account_name: Name.from(accountName),
@@ -162,22 +162,22 @@ export class RoborovskiClient {
         options?: GetActivityOptions
     ): Promise<GetActivityResponse> {
         // Runtime validation: action requires contract
-        if (options?.action && !options?.contract) {
+        if (options && options.action && !options.contract) {
             throw new Error('action filter requires contract to be specified')
         }
 
         const params: GetActivityParams = {
             account_name: Name.from(accountName),
-            limit: options?.limit ?? 100,
-            order: options?.order ?? 'desc',
-            decode: options?.decode ?? true,
-            cursor: options?.cursor,
-            contract: options?.contract,
-            action: options?.action,
-            date: options?.date,
-            start_date: options?.start_date,
-            end_date: options?.end_date,
-            omit_null_fields: options?.omit_null_fields,
+            limit: options && options.limit !== undefined ? options.limit : 100,
+            order: options && options.order ? options.order : 'desc',
+            decode: options && options.decode !== undefined ? options.decode : true,
+            cursor: options ? options.cursor : undefined,
+            contract: options ? options.contract : undefined,
+            action: options ? options.action : undefined,
+            date: options ? options.date : undefined,
+            start_date: options ? options.start_date : undefined,
+            end_date: options ? options.end_date : undefined,
+            omit_null_fields: options ? options.omit_null_fields : undefined,
         }
 
         const result = (await this.client.call({
