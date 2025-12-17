@@ -1,0 +1,14 @@
+{
+    "request": {
+        "path": "https://jungle4-test.unicove.com/v1/history/get_activity",
+        "params": {
+            "method": "POST",
+            "body": "{\"account_name\":\"gm\",\"limit\":5,\"order\":\"desc\",\"decode\":true,\"date\":\"2025-12-10\",\"start_date\":\"2025-12-01\"}"
+        }
+    },
+    "status": 400,
+    "json": {
+        "error": "date parameter cannot be combined with start_date or end_date"
+    },
+    "text": "{\"error\":\"date parameter cannot be combined with start_date or end_date\"}"
+}

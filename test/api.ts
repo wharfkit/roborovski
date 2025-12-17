@@ -5,7 +5,7 @@ import {mockFetch} from '@wharfkit/mock-data'
 
 import {RoborovskiClient} from '$lib'
 
-// Setup an APIClient
+// Setup an APIClient with mockFetch for deterministic tests
 const client = new APIClient({
     provider: new FetchProvider('https://jungle4.greymass.com', {fetch: mockFetch}),
 })
