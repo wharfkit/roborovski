@@ -1,7 +1,7 @@
 {
     "name": "@wharfkit/roborovski",
     "description": "API Client to access Roborovski API endpoints",
-    "version": "2.0.0-rc1",
+    "version": "2.0.0-rc2",
     "homepage": "https://github.com/wharfkit/roborovski",
     "main": "lib/roborovski.js",
     "module": "lib/roborovski.m.js",
