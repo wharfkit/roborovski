@@ -1,0 +1,17 @@
+{
+    "request": {
+        "path": "https://jungle4.roborovski.io/account/gm/activity",
+        "params": {
+            "method": "POST",
+            "body": "{\"limit\":10,\"order\":\"desc\",\"decode\":true,\"date\":\"invalid-date\"}"
+        }
+    },
+    "status": 400,
+    "json": {
+        "error": {
+            "code": "invalid_date",
+            "message": "expected YYYY-MM-DD format"
+        }
+    },
+    "text": "{\"error\":{\"code\":\"invalid_date\",\"message\":\"expected YYYY-MM-DD format\"}}"
+}

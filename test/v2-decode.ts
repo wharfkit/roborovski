@@ -15,16 +15,16 @@ suite('v2 - decode parameter', function () {
 
     suite('baseline', function () {
         test('decode: true (default)', async function () {
-            const result = await robo.get_activity(TEST_ACCOUNT, {
+            const result = await robo.activity(TEST_ACCOUNT, {
                 contract: TEST_CONTRACT_TOKEN,
                 action: TEST_ACTION_TRANSFER,
                 limit: 1,
             })
 
-            assert.isArray(result.actions)
-            assert.isAtLeast(result.actions.length, 1)
+            assert.isArray(result.results)
+            assert.isAtLeast(result.results.length, 1)
 
-            const action = result.actions[0]
+            const action = result.results[0]
             const data = action.action_trace.act.data
 
             assert.property(data, 'from', 'Decoded transfer should have "from" field')
@@ -44,17 +44,17 @@ suite('v2 - decode parameter', function () {
         })
 
         test('decode: false', async function () {
-            const result = await robo.get_activity(TEST_ACCOUNT, {
+            const result = await robo.activity(TEST_ACCOUNT, {
                 contract: TEST_CONTRACT_TOKEN,
                 action: TEST_ACTION_TRANSFER,
                 decode: false,
                 limit: 1,
             })
 
-            assert.isArray(result.actions)
-            assert.isAtLeast(result.actions.length, 1)
+            assert.isArray(result.results)
+            assert.isAtLeast(result.results.length, 1)
 
-            const action = result.actions[0]
+            const action = result.results[0]
             const data = action.action_trace.act.data
 
             assert.isString(data, 'With decode: false, data should be hex string')

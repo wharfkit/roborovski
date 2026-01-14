@@ -1,0 +1,17 @@
+{
+    "request": {
+        "path": "https://jungle4.roborovski.io/account/gm/activity",
+        "params": {
+            "method": "POST",
+            "body": "{\"limit\":5,\"order\":\"desc\",\"decode\":true,\"cursor\":\"invalid-cursor-format\"}"
+        }
+    },
+    "status": 400,
+    "json": {
+        "error": {
+            "code": "invalid_cursor",
+            "message": "invalid cursor: illegal base64 data at input byte 7"
+        }
+    },
+    "text": "{\"error\":{\"code\":\"invalid_cursor\",\"message\":\"invalid cursor: illegal base64 data at input byte 7\"}}"
+}

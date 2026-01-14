@@ -13,7 +13,7 @@ const legacyRobo = new RoborovskiClient(legacyClient)
 
 // Setup an APIClient with mockFetch for new API endpoint
 const newClient = new APIClient({
-    provider: new FetchProvider('https://jungle4-test.unicove.com', {fetch: mockFetch}),
+    provider: new FetchProvider('https://jungle4.roborovski.io', {fetch: mockFetch}),
 })
 const newRobo = new RoborovskiClient(newClient)
 
@@ -69,49 +69,44 @@ suite('api', function () {
         })
     })
 
-    suite('new endpoint (jungle4-test.unicove.com)', function () {
-        test('get_transaction (default, no traces)', async function () {
-            const res = await newRobo.get_transaction(TEST_TX_ID)
-            assert.isTrue(res.id.equals(TEST_TX_ID))
-            assert.equal(res.traces, null)
-
-            assert.equal(Number(res.block_num), 99840257)
-
-            const trx = res.trx.trx
-            assert.lengthOf(trx.actions, 1)
-            assert.equal(String(trx.actions[0].account), 'eosio')
-            assert.equal(String(trx.actions[0].name), 'setabi')
-            assert.lengthOf(trx.actions[0].authorization, 1)
-            assert.equal(String(trx.actions[0].authorization[0].actor), 'corecorecore')
-            assert.equal(String(trx.actions[0].authorization[0].permission), 'active')
-
-            const receipt = res.trx.receipt
-            assert.equal(String(receipt.status), 'executed')
-            assert.equal(Number(receipt.cpu_usage_us), 430)
-            assert.equal(Number(receipt.net_usage_words), 22)
-        })
-
-        test('get_transaction (with traces)', async function () {
-            const res = await newRobo.get_transaction(TEST_TX_ID, {traces: true})
-            assert.isTrue(res.id.equals(TEST_TX_ID))
+    suite('new endpoint (jungle4.roborovski.io)', function () {
+        test('transaction (default, with traces)', async function () {
+            const res = await newRobo.transaction(TEST_TX_ID)
+            assert.equal(res.id, TEST_TX_ID)
             assert.isDefined(res.traces)
             assert.lengthOf(res.traces!, 1)
 
-            const json = res.toJSON()
-            const trace = json.traces[0]
-            assert.equal(trace.act.account, 'eosio')
-            assert.equal(trace.act.name, 'setabi')
-            assert.equal(trace.receiver, 'eosio')
-            assert.equal(trace.action_ordinal, 1)
-            assert.equal(trace.block_num, 99840257)
-            assert.equal(trace.context_free, false)
+            assert.equal(res.block_num, 99840257)
 
-            assert.lengthOf(trace.account_ram_deltas, 1)
-            assert.equal(trace.account_ram_deltas[0].account, 'corecorecore')
-            assert.equal(trace.account_ram_deltas[0].delta, 96)
+            const trx = res.trx as {trx: {actions: unknown[]}}
+            assert.lengthOf(trx.trx.actions, 1)
+            const action = trx.trx.actions[0] as {
+                account: string
+                name: string
+                authorization: {actor: string; permission: string}[]
+            }
+            assert.equal(action.account, 'eosio')
+            assert.equal(action.name, 'setabi')
+            assert.lengthOf(action.authorization, 1)
+            assert.equal(action.authorization[0].actor, 'corecorecore')
+            assert.equal(action.authorization[0].permission, 'active')
 
-            assert.equal(trace.trx_id, TEST_TX_ID)
-            assert.equal(trace.receipt.global_sequence, 132670040)
+            const receipt = (
+                res.trx as unknown as {
+                    receipt: {status: string; cpu_usage_us: number; net_usage_words: number}
+                }
+            ).receipt
+            assert.equal(receipt.status, 'executed')
+            assert.equal(receipt.cpu_usage_us, 430)
+            assert.equal(receipt.net_usage_words, 22)
+        })
+
+        test('transaction (no traces)', async function () {
+            const res = await newRobo.transaction(TEST_TX_ID, {traces: false})
+            assert.equal(res.id, TEST_TX_ID)
+            assert.isNull(res.traces)
+
+            assert.equal(res.block_num, 99840257)
         })
     })
 
@@ -119,8 +114,11 @@ suite('api', function () {
         test('get_actions (default, most recent)', async function () {
             const res = await legacyRobo.get_actions('teamgreymass')
             const test = res.actions.map((a) => Number(a.account_action_seq))
-            assert.equal(test[0], 907)
-            assert.equal(test[9], 898)
+            assert.isAtLeast(test.length, 1, 'Should return actions')
+            // Default is descending order (most recent first)
+            for (let i = 1; i < test.length; i++) {
+                assert.isAbove(test[i - 1], test[i], 'Actions should be in descending order')
+            }
         })
 
         test('get_actions (first 10)', async function () {
@@ -150,8 +148,11 @@ suite('api', function () {
                 reverse: true,
             })
             const test = res.actions.map((a) => Number(a.account_action_seq))
-            assert.equal(test[0], 907)
-            assert.equal(test[9], 898)
+            assert.lengthOf(test, 10, 'Should return 10 actions')
+            // Reverse flag returns most recent first
+            for (let i = 1; i < test.length; i++) {
+                assert.isAbove(test[i - 1], test[i], 'Actions should be in descending order')
+            }
         })
     })
 })

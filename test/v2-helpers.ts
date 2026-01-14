@@ -1,7 +1,7 @@
 import {assert} from 'chai'
 import {APIClient, FetchProvider} from '@wharfkit/antelope'
 import {mockFetch} from '@wharfkit/mock-data'
-import {RoborovskiClient, GetActivityResponse} from '$lib'
+import {RoborovskiClient, ActivityCursor} from '$lib'
 
 /**
  * Shared test constants
@@ -18,7 +18,7 @@ export const TEST_DATE_RECENT = '2025-12-10'
  */
 export function createTestClient(): RoborovskiClient {
     const client = new APIClient({
-        provider: new FetchProvider('https://jungle4-test.unicove.com', {fetch: mockFetch}),
+        provider: new FetchProvider('https://jungle4.roborovski.io', {fetch: mockFetch}),
     })
     return new RoborovskiClient(client)
 }
@@ -198,18 +198,14 @@ export async function paginateAll(
     options: any
 ): Promise<any[]> {
     const allActions: any[] = []
-    let result: GetActivityResponse = await robo.get_activity(account, options)
+    let cursor: ActivityCursor = await robo.activity(account, options)
 
-    allActions.push(...result.actions)
+    allActions.push(...cursor.results)
 
-    while (result.pagination.next_cursor) {
-        result = await robo.get_activity(account, {
-            ...options,
-            cursor: result.pagination.next_cursor,
-        })
-        allActions.push(...result.actions)
+    while (cursor.next_cursor) {
+        cursor = await cursor.next()
+        allActions.push(...cursor.results)
 
-        // Safety: prevent infinite loops
         if (allActions.length > 10000) {
             throw new Error('Pagination exceeded 10000 actions - possible infinite loop')
         }
