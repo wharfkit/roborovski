@@ -11,7 +11,11 @@ export const TEST_CONTRACT_TOKEN = 'eosio.token'
 export const TEST_CONTRACT_SYSTEM = 'eosio'
 export const TEST_CONTRACT_VAULTA = 'core.vaulta'
 export const TEST_ACTION_TRANSFER = 'transfer'
-export const TEST_DATE_RECENT = '2025-12-10'
+export const TEST_DATE = '2026-01-13'
+export const TEST_DATE_PREV = '2026-01-12'
+export const TEST_DATE_NEXT = '2026-01-14'
+export const TEST_DATE_MONTH_START = '2026-01-01'
+export const TEST_DATE_MONTH_END = '2026-01-31'
 
 /**
  * Create a RoborovskiClient for testing
@@ -142,18 +146,18 @@ export function validateHexData(action: any): void {
 }
 
 /**
- * Validation: Results are in ascending order by account_action_seq
+ * Validation: Results are in ascending order by global_action_seq
  */
 export function validateAscendingOrder(actions: any[]): void {
     assert.isArray(actions, 'Actions should be an array')
 
     if (actions.length <= 1) {
-        return // Single or no results are trivially sorted
+        return
     }
 
     for (let i = 1; i < actions.length; i++) {
-        const prevSeq = Number(actions[i - 1].account_action_seq)
-        const currSeq = Number(actions[i].account_action_seq)
+        const prevSeq = Number(actions[i - 1].global_action_seq)
+        const currSeq = Number(actions[i].global_action_seq)
 
         assert.isBelow(
             prevSeq,
@@ -166,18 +170,18 @@ export function validateAscendingOrder(actions: any[]): void {
 }
 
 /**
- * Validation: Results are in descending order by account_action_seq
+ * Validation: Results are in descending order by global_action_seq
  */
 export function validateDescendingOrder(actions: any[]): void {
     assert.isArray(actions, 'Actions should be an array')
 
     if (actions.length <= 1) {
-        return // Single or no results are trivially sorted
+        return
     }
 
     for (let i = 1; i < actions.length; i++) {
-        const prevSeq = Number(actions[i - 1].account_action_seq)
-        const currSeq = Number(actions[i].account_action_seq)
+        const prevSeq = Number(actions[i - 1].global_action_seq)
+        const currSeq = Number(actions[i].global_action_seq)
 
         assert.isAbove(
             prevSeq,

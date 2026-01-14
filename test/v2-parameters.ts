@@ -1,24 +1,22 @@
 import {assert} from 'chai'
 
-import {APIClient, FetchProvider} from '@wharfkit/antelope'
-import {mockFetch} from '@wharfkit/mock-data'
+import {
+    createTestClient,
+    TEST_ACCOUNT,
+    TEST_CONTRACT_TOKEN,
+    TEST_ACTION_TRANSFER,
+    TEST_DATE,
+    TEST_DATE_MONTH_START,
+} from './v2-helpers'
 
-import {RoborovskiClient} from '$lib'
-
-// Setup an APIClient with mock data (will record on first run, replay after)
-const client = new APIClient({
-    provider: new FetchProvider('https://jungle4.roborovski.io', {fetch: mockFetch}),
-})
-
-// Setup the API
-const robo = new RoborovskiClient(client)
+const robo = createTestClient()
 
 suite('v2 parameters', function () {
     this.slow(2000)
     this.timeout(10 * 1000)
 
     test('cursor parameter', async function () {
-        const page1 = await robo.activity('gm', {
+        const page1 = await robo.activity(TEST_ACCOUNT, {
             limit: 2,
         })
         assert.isArray(page1.results)
@@ -35,66 +33,64 @@ suite('v2 parameters', function () {
     })
 
     test('contract filter', async function () {
-        const result = await robo.activity('gm', {
-            contract: 'eosio.token',
+        const result = await robo.activity(TEST_ACCOUNT, {
+            contract: TEST_CONTRACT_TOKEN,
             limit: 5,
         })
         assert.isArray(result.results)
         assert.isAtLeast(result.results.length, 1)
 
-        // Verify all actions are from eosio.token
         result.results.forEach((action) => {
-            assert.equal(action.action_trace.act.account, 'eosio.token')
+            assert.equal(action.action_trace.act.account, TEST_CONTRACT_TOKEN)
         })
     })
 
     test('action filter', async function () {
-        const result = await robo.activity('gm', {
-            contract: 'eosio.token',
-            action: 'transfer',
+        const result = await robo.activity(TEST_ACCOUNT, {
+            contract: TEST_CONTRACT_TOKEN,
+            action: TEST_ACTION_TRANSFER,
             limit: 5,
         })
         assert.isArray(result.results)
         assert.isAtLeast(result.results.length, 1)
 
-        // Verify all actions are transfers
         result.results.forEach((action) => {
-            assert.equal(action.action_trace.act.account, 'eosio.token')
-            assert.equal(action.action_trace.act.name, 'transfer')
+            assert.equal(action.action_trace.act.account, TEST_CONTRACT_TOKEN)
+            assert.equal(action.action_trace.act.name, TEST_ACTION_TRANSFER)
         })
     })
 
-    test.skip('date filter', async function () {
-        const result = await robo.activity('gm', {
-            date: '2025-12-10',
+    test('date filter', async function () {
+        const result = await robo.activity(TEST_ACCOUNT, {
+            date: TEST_DATE,
             limit: 5,
         })
         assert.isArray(result.results)
-        assert.isAtLeast(result.results.length, 1, 'Should have actions on 2025-12-10')
+        assert.isAtLeast(result.results.length, 1, `Should have actions on ${TEST_DATE}`)
 
         result.results.forEach((action) => {
-            assert.match(action.block_time, /^2025-12-10/)
+            assert.match(action.block_time, new RegExp(`^${TEST_DATE}`))
         })
     })
 
-    test.skip('date range filter', async function () {
-        const result = await robo.activity('gm', {
-            start_date: '2025-12-10',
-            end_date: '2025-12-10',
+    test('date range filter', async function () {
+        const result = await robo.activity(TEST_ACCOUNT, {
+            start_date: TEST_DATE,
+            end_date: TEST_DATE,
             limit: 5,
         })
         assert.isArray(result.results)
         assert.isAtLeast(result.results.length, 1, 'Should have actions in date range')
 
         result.results.forEach((action) => {
-            assert.match(action.block_time, /^2025-12-10/)
+            assert.match(action.block_time, new RegExp(`^${TEST_DATE}`))
         })
     })
 
     test('decode parameter', async function () {
-        const result = await robo.activity('gm', {
-            contract: 'eosio.token',
-            action: 'transfer',
+        const result = await robo.activity(TEST_ACCOUNT, {
+            contract: TEST_CONTRACT_TOKEN,
+            action: TEST_ACTION_TRANSFER,
             decode: true,
             limit: 1,
         })
@@ -104,7 +100,6 @@ suite('v2 parameters', function () {
         const action = result.results[0]
         const data = action.action_trace.act.data
 
-        // When decode=true and ABI is available, data should be an object
         if (typeof data === 'object' && data !== null) {
             assert.property(data, 'from')
             assert.property(data, 'to')
@@ -112,51 +107,47 @@ suite('v2 parameters', function () {
             assert.property(data, 'memo')
         }
 
-        // hex_data should also be present
         if ('hex_data' in action.action_trace.act) {
             assert.isString(action.action_trace.act.hex_data)
         }
     })
 
-    test.skip('combined filters', async function () {
-        const result = await robo.activity('gm', {
-            contract: 'eosio.token',
-            action: 'transfer',
-            date: '2025-12-10',
+    test('combined filters', async function () {
+        const result = await robo.activity(TEST_ACCOUNT, {
+            contract: TEST_CONTRACT_TOKEN,
+            action: TEST_ACTION_TRANSFER,
+            date: TEST_DATE,
             decode: true,
             limit: 3,
         })
         assert.isArray(result.results)
-        assert.isAtLeast(result.results.length, 1, 'Should have transfers on 2025-12-10')
+        assert.isAtLeast(result.results.length, 1, `Should have transfers on ${TEST_DATE}`)
 
         result.results.forEach((action) => {
-            assert.equal(action.action_trace.act.account, 'eosio.token')
-            assert.equal(action.action_trace.act.name, 'transfer')
-            assert.match(action.block_time, /^2025-12-10/)
+            assert.equal(action.action_trace.act.account, TEST_CONTRACT_TOKEN)
+            assert.equal(action.action_trace.act.name, TEST_ACTION_TRANSFER)
+            assert.match(action.block_time, new RegExp(`^${TEST_DATE}`))
         })
     })
 
     test('next_cursor indicates more results', async function () {
-        const result = await robo.activity('gm', {
+        const result = await robo.activity(TEST_ACCOUNT, {
             limit: 2,
         })
         assert.isArray(result.results)
         assert.isAtLeast(result.results.length, 1, 'Should have actions')
 
-        // Small limit should have more results
         assert.isNotOk(!result.next_cursor, 'Should have next_cursor with small limit')
         assert.isString(result.next_cursor)
     })
 
     test('response structure validation', async function () {
-        const result = await robo.activity('gm', {
+        const result = await robo.activity(TEST_ACCOUNT, {
             limit: 2,
         })
 
-        // Validate top-level response structure
         assert.isArray(result.results, 'results should be an array')
 
-        // Validate cursor field types - next_cursor should exist (small limit)
         assert.isDefined(result.next_cursor, 'next_cursor should be defined')
         if (result.next_cursor) {
             assert.isString(result.next_cursor, 'next_cursor should be string when present')
@@ -164,7 +155,7 @@ suite('v2 parameters', function () {
     })
 
     test('default order is descending', async function () {
-        const result = await robo.activity('gm', {
+        const result = await robo.activity(TEST_ACCOUNT, {
             limit: 10,
         })
 
@@ -172,14 +163,14 @@ suite('v2 parameters', function () {
         assert.isAtLeast(result.results.length, 2, 'Need multiple actions to verify order')
 
         for (let i = 1; i < result.results.length; i++) {
-            const prevSeq = Number(result.results[i - 1].account_action_seq)
-            const currSeq = Number(result.results[i].account_action_seq)
+            const prevSeq = Number(result.results[i - 1].global_action_seq)
+            const currSeq = Number(result.results[i].global_action_seq)
             assert.isAbove(prevSeq, currSeq, 'Default order should be descending (newest-first)')
         }
     })
 
     test('order: asc is ascending', async function () {
-        const result = await robo.activity('gm', {
+        const result = await robo.activity(TEST_ACCOUNT, {
             limit: 10,
             order: 'asc',
         })
@@ -188,14 +179,14 @@ suite('v2 parameters', function () {
         assert.isAtLeast(result.results.length, 2, 'Need multiple actions to verify order')
 
         for (let i = 1; i < result.results.length; i++) {
-            const prevSeq = Number(result.results[i - 1].account_action_seq)
-            const currSeq = Number(result.results[i].account_action_seq)
+            const prevSeq = Number(result.results[i - 1].global_action_seq)
+            const currSeq = Number(result.results[i].global_action_seq)
             assert.isBelow(prevSeq, currSeq, 'order: asc should be ascending')
         }
     })
 
     test('order: desc is descending', async function () {
-        const result = await robo.activity('gm', {
+        const result = await robo.activity(TEST_ACCOUNT, {
             limit: 10,
             order: 'desc',
         })
@@ -204,14 +195,14 @@ suite('v2 parameters', function () {
         assert.isAtLeast(result.results.length, 2, 'Need multiple actions to verify order')
 
         for (let i = 1; i < result.results.length; i++) {
-            const prevSeq = Number(result.results[i - 1].account_action_seq)
-            const currSeq = Number(result.results[i].account_action_seq)
+            const prevSeq = Number(result.results[i - 1].global_action_seq)
+            const currSeq = Number(result.results[i].global_action_seq)
             assert.isAbove(prevSeq, currSeq, 'order: desc should be descending')
         }
     })
 
     test('limit: 1 (minimum)', async function () {
-        const result = await robo.activity('gm', {
+        const result = await robo.activity(TEST_ACCOUNT, {
             limit: 1,
         })
 
@@ -220,7 +211,7 @@ suite('v2 parameters', function () {
     })
 
     test('limit: 100 (large limit)', async function () {
-        const result = await robo.activity('gm', {
+        const result = await robo.activity(TEST_ACCOUNT, {
             limit: 100,
         })
 
@@ -229,9 +220,9 @@ suite('v2 parameters', function () {
     })
 
     test('limit enforcement with filters', async function () {
-        const result = await robo.activity('gm', {
-            contract: 'eosio.token',
-            action: 'transfer',
+        const result = await robo.activity(TEST_ACCOUNT, {
+            contract: TEST_CONTRACT_TOKEN,
+            action: TEST_ACTION_TRANSFER,
             limit: 5,
         })
 
@@ -240,17 +231,17 @@ suite('v2 parameters', function () {
         assert.isAtMost(result.results.length, 5, 'Limit should be enforced even with filters')
 
         result.results.forEach((action) => {
-            assert.equal(action.action_trace.act.account, 'eosio.token')
-            assert.equal(action.action_trace.act.name, 'transfer')
+            assert.equal(action.action_trace.act.account, TEST_CONTRACT_TOKEN)
+            assert.equal(action.action_trace.act.name, TEST_ACTION_TRANSFER)
         })
     })
 
     suite('error handling', function () {
         test('conflicting date parameters (date + start_date)', async function () {
             try {
-                await robo.activity('gm', {
-                    date: '2025-12-10',
-                    start_date: '2025-12-01',
+                await robo.activity(TEST_ACCOUNT, {
+                    date: TEST_DATE,
+                    start_date: TEST_DATE_MONTH_START,
                     limit: 5,
                 })
                 assert.fail('Should have thrown error for conflicting date parameters')
@@ -261,7 +252,7 @@ suite('v2 parameters', function () {
 
         test('limit: 0 (invalid)', async function () {
             try {
-                const result = await robo.activity('gm', {
+                const result = await robo.activity(TEST_ACCOUNT, {
                     limit: 0,
                 })
 
@@ -274,7 +265,7 @@ suite('v2 parameters', function () {
 
         test('negative limit (invalid)', async function () {
             try {
-                const result = await robo.activity('gm', {
+                const result = await robo.activity(TEST_ACCOUNT, {
                     limit: -5,
                 })
 
@@ -285,7 +276,7 @@ suite('v2 parameters', function () {
         })
 
         test('empty string contract filter', async function () {
-            const result = await robo.activity('gm', {
+            const result = await robo.activity(TEST_ACCOUNT, {
                 contract: '',
                 limit: 5,
             })
@@ -294,8 +285,8 @@ suite('v2 parameters', function () {
         })
 
         test('empty string action filter', async function () {
-            const result = await robo.activity('gm', {
-                contract: 'eosio.token',
+            const result = await robo.activity(TEST_ACCOUNT, {
+                contract: TEST_CONTRACT_TOKEN,
                 action: '',
                 limit: 5,
             })

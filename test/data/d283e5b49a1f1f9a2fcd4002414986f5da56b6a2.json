@@ -10,118 +10,77 @@
     "json": {
         "results": [
             {
-                "global_action_seq": 320127154,
-                "account_action_seq": 19426,
-                "block_num": 244882207,
-                "block_time": "2026-01-13T10:06:13.000",
+                "global_action_seq": 320331263,
+                "block_num": 245055033,
+                "block_time": "2026-01-14T10:06:28.000",
                 "action_trace": {
-                    "block_num": 244882207,
-                    "block_time": "2026-01-13T10:06:13.000",
-                    "action_ordinal": 5,
                     "creator_action_ordinal": 3,
                     "receipt": {
                         "receiver": "eosio.token",
-                        "act_digest": "68011f6efc72531eebde91451ac2c6938d0d007367b0e883b586f836b81c5daa",
-                        "global_sequence": 320127154,
-                        "recv_sequence": 8604229,
+                        "act_digest": "dcc845110b4522fe4c4a27595089203d1f55f76ba95233d85fca7f5001ee5d83",
+                        "global_sequence": 320331263,
+                        "recv_sequence": 8605565,
                         "auth_sequence": [
                             [
                                 "eosio",
-                                245438533
+                                245611954
                             ]
                         ],
                         "code_sequence": 4,
                         "abi_sequence": 5
-                    },
-                    "receiver": "eosio.token",
-                    "act": {
-                        "account": "eosio.token",
-                        "name": "issue",
-                        "authorization": [
-                            {
-                                "actor": "eosio",
-                                "permission": "active"
-                            }
-                        ],
-                        "hex_data": "0000000000ea3055236f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773",
-                        "data": {
-                            "memo": "issue tokens for producer pay and savings",
-                            "to": "eosio",
-                            "quantity": "15.9523 EOS"
-                        }
-                    },
-                    "context_free": false,
-                    "producer_block_id": "0e989b1fd21cd7f156dc6d6ecd220c3edf6d219e65bdba2a1d3fde92fe8e19d1",
-                    "account_ram_deltas": [],
-                    "closest_unnotified_ancestor_action_ordinal": 3,
-                    "elapsed": 16,
-                    "trx_id": "203bdee71fb97910fd2f08ec9e5aec997ec9e999356e5a4f0c9302d8f13ed849"
-                },
-                "irreversible": true
-            },
-            {
-                "global_action_seq": 320127119,
-                "account_action_seq": 19425,
-                "block_num": 244882206,
-                "block_time": "2026-01-13T10:06:12.500",
-                "action_trace": {
-                    "action_ordinal": 5,
-                    "closest_unnotified_ancestor_action_ordinal": 3,
-                    "receipt": {
-                        "receiver": "eosio.token",
-                        "act_digest": "68011f6efc72531eebde91451ac2c6938d0d007367b0e883b586f836b81c5daa",
-                        "global_sequence": 320127119,
-                        "recv_sequence": 8604221,
-                        "auth_sequence": [
-                            [
-                                "eosio",
-                                245438522
-                            ]
-                        ],
-                        "code_sequence": 4,
-                        "abi_sequence": 5
-                    },
-                    "context_free": false,
-                    "block_time": "2026-01-13T10:06:12.500",
-                    "producer_block_id": "0e989b1e28f533357693c058eddb8c01cf463f11cd2d5d96b646f8a9cd2b60a6",
-                    "creator_action_ordinal": 3,
-                    "receiver": "eosio.token",
-                    "act": {
-                        "account": "eosio.token",
-                        "name": "issue",
-                        "authorization": [
-                            {
-                                "actor": "eosio",
-                                "permission": "active"
-                            }
-                        ],
-                        "hex_data": "0000000000ea3055236f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773",
-                        "data": {
-                            "memo": "issue tokens for producer pay and savings",
-                            "to": "eosio",
-                            "quantity": "15.9523 EOS"
-                        }
                     },
                     "elapsed": 15,
-                    "trx_id": "90e7db96678040447bfdba74fb3e9c6839acfe2a092df3f79e5860acbd73376f",
-                    "block_num": 244882206,
-                    "account_ram_deltas": []
+                    "trx_id": "ac905b4ff1deed40279c1f39beb5ff6d1851c2cfd53217ffacfb59d780ff4a4c",
+                    "block_num": 245055033,
+                    "account_ram_deltas": [],
+                    "action_ordinal": 5,
+                    "closest_unnotified_ancestor_action_ordinal": 3,
+                    "receiver": "eosio.token",
+                    "act": {
+                        "account": "eosio.token",
+                        "name": "issue",
+                        "authorization": [
+                            {
+                                "actor": "eosio",
+                                "permission": "active"
+                            }
+                        ],
+                        "hex_data": "0000000000ea3055386f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773",
+                        "data": {
+                            "memo": "issue tokens for producer pay and savings",
+                            "to": "eosio",
+                            "quantity": "15.9544 EOS"
+                        }
+                    },
+                    "context_free": false,
+                    "block_time": "2026-01-14T10:06:28.000",
+                    "producer_block_id": "0e9b3e394a6627e851ae0f9f75c2c1fc9369a1840cf78e234b04c4493ae4b76e"
                 },
                 "irreversible": true
             },
             {
-                "global_action_seq": 320126963,
-                "account_action_seq": 19424,
-                "block_num": 244882203,
-                "block_time": "2026-01-13T10:06:11.000",
+                "global_action_seq": 320331213,
+                "block_num": 245055032,
+                "block_time": "2026-01-14T10:06:27.500",
                 "action_trace": {
-                    "action_ordinal": 5,
-                    "creator_action_ordinal": 3,
+                    "receipt": {
+                        "receiver": "eosio.token",
+                        "act_digest": "dcc845110b4522fe4c4a27595089203d1f55f76ba95233d85fca7f5001ee5d83",
+                        "global_sequence": 320331213,
+                        "recv_sequence": 8605554,
+                        "auth_sequence": [
+                            [
+                                "eosio",
+                                245611943
+                            ]
+                        ],
+                        "code_sequence": 4,
+                        "abi_sequence": 5
+                    },
                     "receiver": "eosio.token",
                     "act": {
-                        "hex_data": "0000000000ea3055236f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773",
                         "data": {
-                            "quantity": "15.9523 EOS",
+                            "quantity": "15.9544 EOS",
                             "memo": "issue tokens for producer pay and savings",
                             "to": "eosio"
                         },
@@ -132,51 +91,135 @@
                                 "actor": "eosio",
                                 "permission": "active"
                             }
-                        ]
+                        ],
+                        "hex_data": "0000000000ea3055386f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773"
                     },
-                    "elapsed": 15,
-                    "trx_id": "0b226ec54bc4ec58cd4e3fac20a1847ae1502281487245ca63de67f6b13d29c8",
-                    "block_num": 244882203,
-                    "producer_block_id": "0e989b1be609571755bcf75bdff1899d2fd68588bed7431b096b6445df2ef393",
+                    "context_free": false,
+                    "action_ordinal": 5,
+                    "closest_unnotified_ancestor_action_ordinal": 3,
+                    "elapsed": 18,
+                    "trx_id": "4b4ce63c3d4205e1e6aa39cc1ac26780b6df19c5278a0d2108e9d3c4b398bfad",
+                    "block_num": 245055032,
+                    "block_time": "2026-01-14T10:06:27.500",
+                    "producer_block_id": "0e9b3e383d6531bcb6b6ffd9d12516c159332b963eaf425e00b93a15cd046607",
+                    "account_ram_deltas": [],
+                    "creator_action_ordinal": 3
+                },
+                "irreversible": true
+            },
+            {
+                "global_action_seq": 320331175,
+                "block_num": 245055031,
+                "block_time": "2026-01-14T10:06:27.000",
+                "action_trace": {
                     "closest_unnotified_ancestor_action_ordinal": 3,
                     "receipt": {
                         "receiver": "eosio.token",
-                        "act_digest": "68011f6efc72531eebde91451ac2c6938d0d007367b0e883b586f836b81c5daa",
-                        "global_sequence": 320126963,
-                        "recv_sequence": 8604186,
+                        "act_digest": "dcc845110b4522fe4c4a27595089203d1f55f76ba95233d85fca7f5001ee5d83",
+                        "global_sequence": 320331175,
+                        "recv_sequence": 8605545,
                         "auth_sequence": [
                             [
                                 "eosio",
-                                245438489
+                                245611932
                             ]
                         ],
                         "code_sequence": 4,
                         "abi_sequence": 5
                     },
+                    "act": {
+                        "account": "eosio.token",
+                        "name": "issue",
+                        "authorization": [
+                            {
+                                "actor": "eosio",
+                                "permission": "active"
+                            }
+                        ],
+                        "hex_data": "0000000000ea3055386f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773",
+                        "data": {
+                            "to": "eosio",
+                            "quantity": "15.9544 EOS",
+                            "memo": "issue tokens for producer pay and savings"
+                        }
+                    },
                     "context_free": false,
-                    "block_time": "2026-01-13T10:06:11.000",
-                    "account_ram_deltas": []
+                    "block_time": "2026-01-14T10:06:27.000",
+                    "account_ram_deltas": [],
+                    "action_ordinal": 5,
+                    "receiver": "eosio.token",
+                    "elapsed": 18,
+                    "trx_id": "2b5b57fba17c403f10f15d5b98185307004e7e56396aca7a5ff0c820f64e2148",
+                    "block_num": 245055031,
+                    "producer_block_id": "0e9b3e37032be7b58eeddb2ce6abd6e70c596fa00407270c527576d995b0696b",
+                    "creator_action_ordinal": 3
                 },
                 "irreversible": true
             },
             {
-                "global_action_seq": 320126916,
-                "account_action_seq": 19423,
-                "block_num": 244882202,
-                "block_time": "2026-01-13T10:06:10.500",
+                "global_action_seq": 320331134,
+                "block_num": 245055030,
+                "block_time": "2026-01-14T10:06:26.500",
                 "action_trace": {
-                    "block_time": "2026-01-13T10:06:10.500",
-                    "producer_block_id": "0e989b1abcee602d1ac9a12e4abc4fb7edeeebafabed70dd294fd1c1a7242f49",
+                    "elapsed": 21,
+                    "trx_id": "8f3a100f40a2691602efcd9b563fbbb8109e4143f880d3184db5d3793cc25b43",
+                    "context_free": false,
+                    "block_num": 245055030,
+                    "block_time": "2026-01-14T10:06:26.500",
+                    "producer_block_id": "0e9b3e360937e40704d45345a07c79c83a11ac9e844ed9efcf4aa2aa5ea5ee13",
+                    "account_ram_deltas": [],
+                    "action_ordinal": 5,
+                    "creator_action_ordinal": 3,
                     "closest_unnotified_ancestor_action_ordinal": 3,
                     "receipt": {
                         "receiver": "eosio.token",
-                        "act_digest": "68011f6efc72531eebde91451ac2c6938d0d007367b0e883b586f836b81c5daa",
-                        "global_sequence": 320126916,
-                        "recv_sequence": 8604176,
+                        "act_digest": "dcc845110b4522fe4c4a27595089203d1f55f76ba95233d85fca7f5001ee5d83",
+                        "global_sequence": 320331134,
+                        "recv_sequence": 8605535,
                         "auth_sequence": [
                             [
                                 "eosio",
-                                245438478
+                                245611921
+                            ]
+                        ],
+                        "code_sequence": 4,
+                        "abi_sequence": 5
+                    },
+                    "receiver": "eosio.token",
+                    "act": {
+                        "data": {
+                            "to": "eosio",
+                            "quantity": "15.9544 EOS",
+                            "memo": "issue tokens for producer pay and savings"
+                        },
+                        "account": "eosio.token",
+                        "name": "issue",
+                        "authorization": [
+                            {
+                                "actor": "eosio",
+                                "permission": "active"
+                            }
+                        ],
+                        "hex_data": "0000000000ea3055386f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773"
+                    }
+                },
+                "irreversible": true
+            },
+            {
+                "global_action_seq": 320331093,
+                "block_num": 245055029,
+                "block_time": "2026-01-14T10:06:26.000",
+                "action_trace": {
+                    "closest_unnotified_ancestor_action_ordinal": 3,
+                    "receipt": {
+                        "receiver": "eosio.token",
+                        "act_digest": "dcc845110b4522fe4c4a27595089203d1f55f76ba95233d85fca7f5001ee5d83",
+                        "global_sequence": 320331093,
+                        "recv_sequence": 8605525,
+                        "auth_sequence": [
+                            [
+                                "eosio",
+                                245611910
                             ]
                         ],
                         "code_sequence": 4,
@@ -192,75 +235,27 @@
                                 "permission": "active"
                             }
                         ],
-                        "hex_data": "0000000000ea3055236f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773",
+                        "hex_data": "0000000000ea3055386f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773",
                         "data": {
                             "to": "eosio",
-                            "quantity": "15.9523 EOS",
+                            "quantity": "15.9544 EOS",
                             "memo": "issue tokens for producer pay and savings"
                         }
                     },
                     "context_free": false,
-                    "elapsed": 15,
-                    "trx_id": "63a9d2c2d41eae92b56e51e6b824f42bcbb522cd6b796ea46f34fe61bb4b4cf9",
+                    "block_num": 245055029,
+                    "elapsed": 16,
+                    "trx_id": "bcf1f6ab2a53fb4aafed244dcc3cb9067a29746ce1c2e3506f57726c2c67bea0",
+                    "block_time": "2026-01-14T10:06:26.000",
+                    "producer_block_id": "0e9b3e3533de6054519bc43852bfde867458ac5dc16158644fee6003965fab25",
                     "account_ram_deltas": [],
                     "action_ordinal": 5,
-                    "creator_action_ordinal": 3,
-                    "block_num": 244882202
-                },
-                "irreversible": true
-            },
-            {
-                "global_action_seq": 320126881,
-                "account_action_seq": 19422,
-                "block_num": 244882201,
-                "block_time": "2026-01-13T10:06:10.000",
-                "action_trace": {
-                    "action_ordinal": 5,
-                    "creator_action_ordinal": 3,
-                    "closest_unnotified_ancestor_action_ordinal": 3,
-                    "act": {
-                        "authorization": [
-                            {
-                                "actor": "eosio",
-                                "permission": "active"
-                            }
-                        ],
-                        "hex_data": "0000000000ea3055236f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773",
-                        "data": {
-                            "memo": "issue tokens for producer pay and savings",
-                            "to": "eosio",
-                            "quantity": "15.9523 EOS"
-                        },
-                        "account": "eosio.token",
-                        "name": "issue"
-                    },
-                    "context_free": false,
-                    "block_num": 244882201,
-                    "block_time": "2026-01-13T10:06:10.000",
-                    "producer_block_id": "0e989b1923d07f1bee2075f4dac50c39ec6deee07f6bb504d9706ab11726d6c0",
-                    "receipt": {
-                        "receiver": "eosio.token",
-                        "act_digest": "68011f6efc72531eebde91451ac2c6938d0d007367b0e883b586f836b81c5daa",
-                        "global_sequence": 320126881,
-                        "recv_sequence": 8604168,
-                        "auth_sequence": [
-                            [
-                                "eosio",
-                                245438467
-                            ]
-                        ],
-                        "code_sequence": 4,
-                        "abi_sequence": 5
-                    },
-                    "receiver": "eosio.token",
-                    "elapsed": 16,
-                    "trx_id": "a3cc50d8dff9e6ecb40d4e71cbc0116c83bb80a7e6419f3771a033a64526df27",
-                    "account_ram_deltas": []
+                    "creator_action_ordinal": 3
                 },
                 "irreversible": true
             }
         ],
-        "next_cursor": "eyJnIjozMjAxMjY4ODEsIm8iOiJkZXNjIiwicSI6ImxNSm5Nb3VCVy9NPSJ9"
+        "next_cursor": "eyJnIjozMjAzMzEwOTMsIm8iOiJkZXNjIiwicSI6ImxNSm5Nb3VCVy9NPSJ9"
     },
-    "text": "{\"results\":[{\"global_action_seq\":320127154,\"account_action_seq\":19426,\"block_num\":244882207,\"block_time\":\"2026-01-13T10:06:13.000\",\"action_trace\":{\"block_num\":244882207,\"block_time\":\"2026-01-13T10:06:13.000\",\"action_ordinal\":5,\"creator_action_ordinal\":3,\"receipt\":{\"receiver\":\"eosio.token\",\"act_digest\":\"68011f6efc72531eebde91451ac2c6938d0d007367b0e883b586f836b81c5daa\",\"global_sequence\":320127154,\"recv_sequence\":8604229,\"auth_sequence\":[[\"eosio\",245438533]],\"code_sequence\":4,\"abi_sequence\":5},\"receiver\":\"eosio.token\",\"act\":{\"account\":\"eosio.token\",\"name\":\"issue\",\"authorization\":[{\"actor\":\"eosio\",\"permission\":\"active\"}],\"hex_data\":\"0000000000ea3055236f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773\",\"data\":{\"memo\":\"issue tokens for producer pay and savings\",\"to\":\"eosio\",\"quantity\":\"15.9523 EOS\"}},\"context_free\":false,\"producer_block_id\":\"0e989b1fd21cd7f156dc6d6ecd220c3edf6d219e65bdba2a1d3fde92fe8e19d1\",\"account_ram_deltas\":[],\"closest_unnotified_ancestor_action_ordinal\":3,\"elapsed\":16,\"trx_id\":\"203bdee71fb97910fd2f08ec9e5aec997ec9e999356e5a4f0c9302d8f13ed849\"},\"irreversible\":true},{\"global_action_seq\":320127119,\"account_action_seq\":19425,\"block_num\":244882206,\"block_time\":\"2026-01-13T10:06:12.500\",\"action_trace\":{\"action_ordinal\":5,\"closest_unnotified_ancestor_action_ordinal\":3,\"receipt\":{\"receiver\":\"eosio.token\",\"act_digest\":\"68011f6efc72531eebde91451ac2c6938d0d007367b0e883b586f836b81c5daa\",\"global_sequence\":320127119,\"recv_sequence\":8604221,\"auth_sequence\":[[\"eosio\",245438522]],\"code_sequence\":4,\"abi_sequence\":5},\"context_free\":false,\"block_time\":\"2026-01-13T10:06:12.500\",\"producer_block_id\":\"0e989b1e28f533357693c058eddb8c01cf463f11cd2d5d96b646f8a9cd2b60a6\",\"creator_action_ordinal\":3,\"receiver\":\"eosio.token\",\"act\":{\"account\":\"eosio.token\",\"name\":\"issue\",\"authorization\":[{\"actor\":\"eosio\",\"permission\":\"active\"}],\"hex_data\":\"0000000000ea3055236f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773\",\"data\":{\"memo\":\"issue tokens for producer pay and savings\",\"to\":\"eosio\",\"quantity\":\"15.9523 EOS\"}},\"elapsed\":15,\"trx_id\":\"90e7db96678040447bfdba74fb3e9c6839acfe2a092df3f79e5860acbd73376f\",\"block_num\":244882206,\"account_ram_deltas\":[]},\"irreversible\":true},{\"global_action_seq\":320126963,\"account_action_seq\":19424,\"block_num\":244882203,\"block_time\":\"2026-01-13T10:06:11.000\",\"action_trace\":{\"action_ordinal\":5,\"creator_action_ordinal\":3,\"receiver\":\"eosio.token\",\"act\":{\"hex_data\":\"0000000000ea3055236f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773\",\"data\":{\"quantity\":\"15.9523 EOS\",\"memo\":\"issue tokens for producer pay and savings\",\"to\":\"eosio\"},\"account\":\"eosio.token\",\"name\":\"issue\",\"authorization\":[{\"actor\":\"eosio\",\"permission\":\"active\"}]},\"elapsed\":15,\"trx_id\":\"0b226ec54bc4ec58cd4e3fac20a1847ae1502281487245ca63de67f6b13d29c8\",\"block_num\":244882203,\"producer_block_id\":\"0e989b1be609571755bcf75bdff1899d2fd68588bed7431b096b6445df2ef393\",\"closest_unnotified_ancestor_action_ordinal\":3,\"receipt\":{\"receiver\":\"eosio.token\",\"act_digest\":\"68011f6efc72531eebde91451ac2c6938d0d007367b0e883b586f836b81c5daa\",\"global_sequence\":320126963,\"recv_sequence\":8604186,\"auth_sequence\":[[\"eosio\",245438489]],\"code_sequence\":4,\"abi_sequence\":5},\"context_free\":false,\"block_time\":\"2026-01-13T10:06:11.000\",\"account_ram_deltas\":[]},\"irreversible\":true},{\"global_action_seq\":320126916,\"account_action_seq\":19423,\"block_num\":244882202,\"block_time\":\"2026-01-13T10:06:10.500\",\"action_trace\":{\"block_time\":\"2026-01-13T10:06:10.500\",\"producer_block_id\":\"0e989b1abcee602d1ac9a12e4abc4fb7edeeebafabed70dd294fd1c1a7242f49\",\"closest_unnotified_ancestor_action_ordinal\":3,\"receipt\":{\"receiver\":\"eosio.token\",\"act_digest\":\"68011f6efc72531eebde91451ac2c6938d0d007367b0e883b586f836b81c5daa\",\"global_sequence\":320126916,\"recv_sequence\":8604176,\"auth_sequence\":[[\"eosio\",245438478]],\"code_sequence\":4,\"abi_sequence\":5},\"receiver\":\"eosio.token\",\"act\":{\"account\":\"eosio.token\",\"name\":\"issue\",\"authorization\":[{\"actor\":\"eosio\",\"permission\":\"active\"}],\"hex_data\":\"0000000000ea3055236f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773\",\"data\":{\"to\":\"eosio\",\"quantity\":\"15.9523 EOS\",\"memo\":\"issue tokens for producer pay and savings\"}},\"context_free\":false,\"elapsed\":15,\"trx_id\":\"63a9d2c2d41eae92b56e51e6b824f42bcbb522cd6b796ea46f34fe61bb4b4cf9\",\"account_ram_deltas\":[],\"action_ordinal\":5,\"creator_action_ordinal\":3,\"block_num\":244882202},\"irreversible\":true},{\"global_action_seq\":320126881,\"account_action_seq\":19422,\"block_num\":244882201,\"block_time\":\"2026-01-13T10:06:10.000\",\"action_trace\":{\"action_ordinal\":5,\"creator_action_ordinal\":3,\"closest_unnotified_ancestor_action_ordinal\":3,\"act\":{\"authorization\":[{\"actor\":\"eosio\",\"permission\":\"active\"}],\"hex_data\":\"0000000000ea3055236f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773\",\"data\":{\"memo\":\"issue tokens for producer pay and savings\",\"to\":\"eosio\",\"quantity\":\"15.9523 EOS\"},\"account\":\"eosio.token\",\"name\":\"issue\"},\"context_free\":false,\"block_num\":244882201,\"block_time\":\"2026-01-13T10:06:10.000\",\"producer_block_id\":\"0e989b1923d07f1bee2075f4dac50c39ec6deee07f6bb504d9706ab11726d6c0\",\"receipt\":{\"receiver\":\"eosio.token\",\"act_digest\":\"68011f6efc72531eebde91451ac2c6938d0d007367b0e883b586f836b81c5daa\",\"global_sequence\":320126881,\"recv_sequence\":8604168,\"auth_sequence\":[[\"eosio\",245438467]],\"code_sequence\":4,\"abi_sequence\":5},\"receiver\":\"eosio.token\",\"elapsed\":16,\"trx_id\":\"a3cc50d8dff9e6ecb40d4e71cbc0116c83bb80a7e6419f3771a033a64526df27\",\"account_ram_deltas\":[]},\"irreversible\":true}],\"next_cursor\":\"eyJnIjozMjAxMjY4ODEsIm8iOiJkZXNjIiwicSI6ImxNSm5Nb3VCVy9NPSJ9\"}"
+    "text": "{\"results\":[{\"global_action_seq\":320331263,\"block_num\":245055033,\"block_time\":\"2026-01-14T10:06:28.000\",\"action_trace\":{\"creator_action_ordinal\":3,\"receipt\":{\"receiver\":\"eosio.token\",\"act_digest\":\"dcc845110b4522fe4c4a27595089203d1f55f76ba95233d85fca7f5001ee5d83\",\"global_sequence\":320331263,\"recv_sequence\":8605565,\"auth_sequence\":[[\"eosio\",245611954]],\"code_sequence\":4,\"abi_sequence\":5},\"elapsed\":15,\"trx_id\":\"ac905b4ff1deed40279c1f39beb5ff6d1851c2cfd53217ffacfb59d780ff4a4c\",\"block_num\":245055033,\"account_ram_deltas\":[],\"action_ordinal\":5,\"closest_unnotified_ancestor_action_ordinal\":3,\"receiver\":\"eosio.token\",\"act\":{\"account\":\"eosio.token\",\"name\":\"issue\",\"authorization\":[{\"actor\":\"eosio\",\"permission\":\"active\"}],\"hex_data\":\"0000000000ea3055386f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773\",\"data\":{\"memo\":\"issue tokens for producer pay and savings\",\"to\":\"eosio\",\"quantity\":\"15.9544 EOS\"}},\"context_free\":false,\"block_time\":\"2026-01-14T10:06:28.000\",\"producer_block_id\":\"0e9b3e394a6627e851ae0f9f75c2c1fc9369a1840cf78e234b04c4493ae4b76e\"},\"irreversible\":true},{\"global_action_seq\":320331213,\"block_num\":245055032,\"block_time\":\"2026-01-14T10:06:27.500\",\"action_trace\":{\"receipt\":{\"receiver\":\"eosio.token\",\"act_digest\":\"dcc845110b4522fe4c4a27595089203d1f55f76ba95233d85fca7f5001ee5d83\",\"global_sequence\":320331213,\"recv_sequence\":8605554,\"auth_sequence\":[[\"eosio\",245611943]],\"code_sequence\":4,\"abi_sequence\":5},\"receiver\":\"eosio.token\",\"act\":{\"data\":{\"quantity\":\"15.9544 EOS\",\"memo\":\"issue tokens for producer pay and savings\",\"to\":\"eosio\"},\"account\":\"eosio.token\",\"name\":\"issue\",\"authorization\":[{\"actor\":\"eosio\",\"permission\":\"active\"}],\"hex_data\":\"0000000000ea3055386f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773\"},\"context_free\":false,\"action_ordinal\":5,\"closest_unnotified_ancestor_action_ordinal\":3,\"elapsed\":18,\"trx_id\":\"4b4ce63c3d4205e1e6aa39cc1ac26780b6df19c5278a0d2108e9d3c4b398bfad\",\"block_num\":245055032,\"block_time\":\"2026-01-14T10:06:27.500\",\"producer_block_id\":\"0e9b3e383d6531bcb6b6ffd9d12516c159332b963eaf425e00b93a15cd046607\",\"account_ram_deltas\":[],\"creator_action_ordinal\":3},\"irreversible\":true},{\"global_action_seq\":320331175,\"block_num\":245055031,\"block_time\":\"2026-01-14T10:06:27.000\",\"action_trace\":{\"closest_unnotified_ancestor_action_ordinal\":3,\"receipt\":{\"receiver\":\"eosio.token\",\"act_digest\":\"dcc845110b4522fe4c4a27595089203d1f55f76ba95233d85fca7f5001ee5d83\",\"global_sequence\":320331175,\"recv_sequence\":8605545,\"auth_sequence\":[[\"eosio\",245611932]],\"code_sequence\":4,\"abi_sequence\":5},\"act\":{\"account\":\"eosio.token\",\"name\":\"issue\",\"authorization\":[{\"actor\":\"eosio\",\"permission\":\"active\"}],\"hex_data\":\"0000000000ea3055386f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773\",\"data\":{\"to\":\"eosio\",\"quantity\":\"15.9544 EOS\",\"memo\":\"issue tokens for producer pay and savings\"}},\"context_free\":false,\"block_time\":\"2026-01-14T10:06:27.000\",\"account_ram_deltas\":[],\"action_ordinal\":5,\"receiver\":\"eosio.token\",\"elapsed\":18,\"trx_id\":\"2b5b57fba17c403f10f15d5b98185307004e7e56396aca7a5ff0c820f64e2148\",\"block_num\":245055031,\"producer_block_id\":\"0e9b3e37032be7b58eeddb2ce6abd6e70c596fa00407270c527576d995b0696b\",\"creator_action_ordinal\":3},\"irreversible\":true},{\"global_action_seq\":320331134,\"block_num\":245055030,\"block_time\":\"2026-01-14T10:06:26.500\",\"action_trace\":{\"elapsed\":21,\"trx_id\":\"8f3a100f40a2691602efcd9b563fbbb8109e4143f880d3184db5d3793cc25b43\",\"context_free\":false,\"block_num\":245055030,\"block_time\":\"2026-01-14T10:06:26.500\",\"producer_block_id\":\"0e9b3e360937e40704d45345a07c79c83a11ac9e844ed9efcf4aa2aa5ea5ee13\",\"account_ram_deltas\":[],\"action_ordinal\":5,\"creator_action_ordinal\":3,\"closest_unnotified_ancestor_action_ordinal\":3,\"receipt\":{\"receiver\":\"eosio.token\",\"act_digest\":\"dcc845110b4522fe4c4a27595089203d1f55f76ba95233d85fca7f5001ee5d83\",\"global_sequence\":320331134,\"recv_sequence\":8605535,\"auth_sequence\":[[\"eosio\",245611921]],\"code_sequence\":4,\"abi_sequence\":5},\"receiver\":\"eosio.token\",\"act\":{\"data\":{\"to\":\"eosio\",\"quantity\":\"15.9544 EOS\",\"memo\":\"issue tokens for producer pay and savings\"},\"account\":\"eosio.token\",\"name\":\"issue\",\"authorization\":[{\"actor\":\"eosio\",\"permission\":\"active\"}],\"hex_data\":\"0000000000ea3055386f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773\"}},\"irreversible\":true},{\"global_action_seq\":320331093,\"block_num\":245055029,\"block_time\":\"2026-01-14T10:06:26.000\",\"action_trace\":{\"closest_unnotified_ancestor_action_ordinal\":3,\"receipt\":{\"receiver\":\"eosio.token\",\"act_digest\":\"dcc845110b4522fe4c4a27595089203d1f55f76ba95233d85fca7f5001ee5d83\",\"global_sequence\":320331093,\"recv_sequence\":8605525,\"auth_sequence\":[[\"eosio\",245611910]],\"code_sequence\":4,\"abi_sequence\":5},\"receiver\":\"eosio.token\",\"act\":{\"account\":\"eosio.token\",\"name\":\"issue\",\"authorization\":[{\"actor\":\"eosio\",\"permission\":\"active\"}],\"hex_data\":\"0000000000ea3055386f02000000000004454f530000000029697373756520746f6b656e7320666f722070726f64756365722070617920616e6420736176696e6773\",\"data\":{\"to\":\"eosio\",\"quantity\":\"15.9544 EOS\",\"memo\":\"issue tokens for producer pay and savings\"}},\"context_free\":false,\"block_num\":245055029,\"elapsed\":16,\"trx_id\":\"bcf1f6ab2a53fb4aafed244dcc3cb9067a29746ce1c2e3506f57726c2c67bea0\",\"block_time\":\"2026-01-14T10:06:26.000\",\"producer_block_id\":\"0e9b3e3533de6054519bc43852bfde867458ac5dc16158644fee6003965fab25\",\"account_ram_deltas\":[],\"action_ordinal\":5,\"creator_action_ordinal\":3},\"irreversible\":true}],\"next_cursor\":\"eyJnIjozMjAzMzEwOTMsIm8iOiJkZXNjIiwicSI6ImxNSm5Nb3VCVy9NPSJ9\"}"
 }

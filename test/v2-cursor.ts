@@ -4,6 +4,8 @@ import {
     createTestClient,
     TEST_ACCOUNT,
     TEST_CONTRACT_TOKEN,
+    TEST_DATE,
+    TEST_ACTION_TRANSFER,
     validateContract,
     validateAction,
     validateNoDuplicatesBetweenPages,
@@ -34,11 +36,11 @@ suite('v2 - cursor parameter', function () {
             assert.isNotEmpty(result.next_cursor, 'next_cursor should not be empty')
         })
 
-        test.skip('last page has no next_cursor', async function () {
+        test('last page has no next_cursor', async function () {
             const result = await robo.activity(TEST_ACCOUNT, {
                 contract: TEST_CONTRACT_TOKEN,
-                action: 'transfer',
-                date: '2025-12-10',
+                action: TEST_ACTION_TRANSFER,
+                date: TEST_DATE,
                 limit: 10000,
             })
 
@@ -111,8 +113,8 @@ suite('v2 - cursor parameter', function () {
             assert.isArray(page2.results)
             validateAscendingOrder(page2.results)
 
-            const lastSeqPage1 = Number(page1.results[page1.results.length - 1].account_action_seq)
-            const firstSeqPage2 = Number(page2.results[0].account_action_seq)
+            const lastSeqPage1 = Number(page1.results[page1.results.length - 1].global_action_seq)
+            const firstSeqPage2 = Number(page2.results[0].global_action_seq)
 
             assert.isBelow(
                 lastSeqPage1,
@@ -139,12 +141,12 @@ suite('v2 - cursor parameter', function () {
         })
     })
 
-    suite.skip('complete pagination', function () {
+    suite('complete pagination', function () {
         test('paginate through all results (small dataset)', async function () {
             const allActions = await paginateAll(robo, TEST_ACCOUNT, {
                 contract: TEST_CONTRACT_TOKEN,
-                action: 'transfer',
-                date: '2025-12-10',
+                action: TEST_ACTION_TRANSFER,
+                date: TEST_DATE,
             })
 
             assert.isArray(allActions)
@@ -156,8 +158,8 @@ suite('v2 - cursor parameter', function () {
         test('paginate with small page size', async function () {
             const allActions = await paginateAll(robo, TEST_ACCOUNT, {
                 contract: TEST_CONTRACT_TOKEN,
-                action: 'transfer',
-                date: '2025-12-10',
+                action: TEST_ACTION_TRANSFER,
+                date: TEST_DATE,
                 limit: 3,
             })
 
@@ -171,8 +173,8 @@ suite('v2 - cursor parameter', function () {
         test('paginate with filters (comprehensive uniqueness)', async function () {
             const allActions = await paginateAll(robo, TEST_ACCOUNT, {
                 contract: TEST_CONTRACT_TOKEN,
-                action: 'transfer',
-                date: '2025-12-10',
+                action: TEST_ACTION_TRANSFER,
+                date: TEST_DATE,
                 order: 'asc',
                 limit: 3,
             })
@@ -186,17 +188,11 @@ suite('v2 - cursor parameter', function () {
             validateAscendingOrder(allActions)
 
             const globalSeqs = allActions.map((a) => Number(a.global_action_seq))
-            const accountSeqs = allActions.map((a) => Number(a.account_action_seq))
 
             assert.equal(
                 globalSeqs.length,
                 new Set(globalSeqs).size,
                 'All global sequences should be unique across all pages'
-            )
-            assert.equal(
-                accountSeqs.length,
-                new Set(accountSeqs).size,
-                'All account sequences should be unique across all pages'
             )
         })
     })
@@ -283,8 +279,8 @@ suite('v2 - cursor parameter', function () {
             validateDescendingOrder(page2.results)
             validateNoDuplicatesBetweenPages(page1.results, page2.results)
 
-            const lastSeqPage1 = Number(page1.results[page1.results.length - 1].account_action_seq)
-            const firstSeqPage2 = Number(page2.results[0].account_action_seq)
+            const lastSeqPage1 = Number(page1.results[page1.results.length - 1].global_action_seq)
+            const firstSeqPage2 = Number(page2.results[0].global_action_seq)
 
             assert.isAbove(
                 lastSeqPage1,
@@ -293,11 +289,11 @@ suite('v2 - cursor parameter', function () {
             )
         })
 
-        test.skip('cursor with all parameters (kitchen sink)', async function () {
+        test('cursor with all parameters (kitchen sink)', async function () {
             const page1 = await robo.activity(TEST_ACCOUNT, {
                 contract: TEST_CONTRACT_TOKEN,
-                action: 'transfer',
-                date: '2025-12-10',
+                action: TEST_ACTION_TRANSFER,
+                date: TEST_DATE,
                 decode: true,
                 order: 'desc',
                 limit: 3,
@@ -321,8 +317,8 @@ suite('v2 - cursor parameter', function () {
             if (page1.next_cursor) {
                 const page2 = await robo.activity(TEST_ACCOUNT, {
                     contract: TEST_CONTRACT_TOKEN,
-                    action: 'transfer',
-                    date: '2025-12-10',
+                    action: TEST_ACTION_TRANSFER,
+                    date: TEST_DATE,
                     decode: true,
                     order: 'desc',
                     limit: 3,
