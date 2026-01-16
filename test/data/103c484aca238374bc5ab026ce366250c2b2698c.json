@@ -1,0 +1,279 @@
+{
+    "request": {
+        "path": "https://jungle4.roborovski.io/account/gm/activity",
+        "params": {
+            "method": "POST",
+            "body": "{\"limit\":5,\"order\":\"desc\",\"decode\":true,\"cursor\":\"eyJnIjozMjAyMjY2NjMsIm8iOiJhc2MiLCJxIjoiQ3FKL3k1S2ZJT009In0=\"}"
+        }
+    },
+    "status": 200,
+    "json": {
+        "results": [
+            {
+                "global_action_seq": 320226666,
+                "block_num": 244968779,
+                "block_time": "2026-01-13T22:07:40.000",
+                "action_trace": {
+                    "receipt": {
+                        "receiver": "gm",
+                        "act_digest": "906ed0387ce0e9b510f586ae39d03413490fede0df879cf936560cb42eee3473",
+                        "global_sequence": 320226666,
+                        "recv_sequence": 13044,
+                        "auth_sequence": [
+                            [
+                                "gm",
+                                40404
+                            ]
+                        ],
+                        "code_sequence": 4,
+                        "abi_sequence": 5
+                    },
+                    "receiver": "gm",
+                    "act": {
+                        "name": "transfer",
+                        "authorization": [
+                            {
+                                "actor": "gm",
+                                "permission": "active"
+                            }
+                        ],
+                        "hex_data": "0000000000008064a0d492e602ea3055f60100000000000004454f53000000000772616d20666565",
+                        "data": {
+                            "quantity": "0.0502 EOS",
+                            "memo": "ram fee",
+                            "from": "gm",
+                            "to": "eosio.ramfee"
+                        },
+                        "account": "eosio.token"
+                    },
+                    "elapsed": 2,
+                    "trx_id": "dddc7c2d7eaa1987077c1b5559ada40ce001eca1ea7c098525daaf763bf508ab",
+                    "context_free": false,
+                    "block_num": 244968779,
+                    "block_time": "2026-01-13T22:07:40.000",
+                    "producer_block_id": "0e99ed4b9932c426a0abd7263dd0296592570bd485aa83ec4f86fecfe6c74ef4",
+                    "account_ram_deltas": [],
+                    "action_ordinal": 15,
+                    "creator_action_ordinal": 8,
+                    "closest_unnotified_ancestor_action_ordinal": 8
+                },
+                "irreversible": true
+            },
+            {
+                "global_action_seq": 320226674,
+                "block_num": 244968779,
+                "block_time": "2026-01-13T22:07:40.000",
+                "action_trace": {
+                    "receipt": {
+                        "receiver": "gm",
+                        "act_digest": "b855eae53532f0f93bcd6e07abebf7c0efa25ec3137d21ce9be6addc0706e0b9",
+                        "global_sequence": 320226674,
+                        "recv_sequence": 13045,
+                        "auth_sequence": [
+                            [
+                                "eosio",
+                                245525189
+                            ]
+                        ],
+                        "code_sequence": 14,
+                        "abi_sequence": 15
+                    },
+                    "elapsed": 3,
+                    "trx_id": "dddc7c2d7eaa1987077c1b5559ada40ce001eca1ea7c098525daaf763bf508ab",
+                    "block_num": 244968779,
+                    "block_time": "2026-01-13T22:07:40.000",
+                    "receiver": "gm",
+                    "act": {
+                        "authorization": [
+                            {
+                                "actor": "eosio",
+                                "permission": "active"
+                            }
+                        ],
+                        "hex_data": "00000000000080640024032b526e9286208801000000000004454f53000000004fc30000000000004fc3000000000000f60100000000000004454f5300000000",
+                        "data": {
+                            "fee": "0.0502 EOS",
+                            "payer": "gm",
+                            "receiver": "kudawolf.gm",
+                            "quantity": "10.0384 EOS",
+                            "bytes": 49999,
+                            "ram_bytes": 49999
+                        },
+                        "account": "eosio",
+                        "name": "logbuyram"
+                    },
+                    "context_free": false,
+                    "producer_block_id": "0e99ed4b9932c426a0abd7263dd0296592570bd485aa83ec4f86fecfe6c74ef4",
+                    "account_ram_deltas": [],
+                    "action_ordinal": 20,
+                    "creator_action_ordinal": 11,
+                    "closest_unnotified_ancestor_action_ordinal": 11
+                },
+                "irreversible": true
+            },
+            {
+                "global_action_seq": 320226677,
+                "block_num": 244968779,
+                "block_time": "2026-01-13T22:07:40.000",
+                "action_trace": {
+                    "context_free": false,
+                    "elapsed": 39,
+                    "trx_id": "dddc7c2d7eaa1987077c1b5559ada40ce001eca1ea7c098525daaf763bf508ab",
+                    "block_num": 244968779,
+                    "block_time": "2026-01-13T22:07:40.000",
+                    "producer_block_id": "0e99ed4b9932c426a0abd7263dd0296592570bd485aa83ec4f86fecfe6c74ef4",
+                    "account_ram_deltas": [
+                        {
+                            "account": "kudawolf.gm",
+                            "delta": 450
+                        }
+                    ],
+                    "action_ordinal": 3,
+                    "creator_action_ordinal": 0,
+                    "closest_unnotified_ancestor_action_ordinal": 0,
+                    "receipt": {
+                        "receiver": "eosio",
+                        "act_digest": "9626a160754068a71bd02a321d809a4c6a53c3a22f1fd51deb19c0b5d00331cb",
+                        "global_sequence": 320226677,
+                        "recv_sequence": 245512288,
+                        "auth_sequence": [
+                            [
+                                "gm",
+                                40406
+                            ]
+                        ],
+                        "code_sequence": 14,
+                        "abi_sequence": 15
+                    },
+                    "receiver": "eosio",
+                    "act": {
+                        "authorization": [
+                            {
+                                "actor": "gm",
+                                "permission": "active"
+                            }
+                        ],
+                        "hex_data": "00000000000080640024032b526e928650c300000000000004454f5300000000f07e0e000000000004454f530000000001",
+                        "data": {
+                            "receiver": "kudawolf.gm",
+                            "stake_net_quantity": "5.0000 EOS",
+                            "stake_cpu_quantity": "95.0000 EOS",
+                            "transfer": true,
+                            "from": "gm"
+                        },
+                        "account": "eosio",
+                        "name": "delegatebw"
+                    }
+                },
+                "irreversible": true
+            },
+            {
+                "global_action_seq": 320226679,
+                "block_num": 244968779,
+                "block_time": "2026-01-13T22:07:40.000",
+                "action_trace": {
+                    "account_ram_deltas": [],
+                    "action_ordinal": 23,
+                    "receipt": {
+                        "receiver": "gm",
+                        "act_digest": "fc3bd433f0025a8bb43674f0c80e7b5890b58095099c31ab8c9a39f3eb875074",
+                        "global_sequence": 320226679,
+                        "recv_sequence": 13046,
+                        "auth_sequence": [
+                            [
+                                "gm",
+                                40408
+                            ]
+                        ],
+                        "code_sequence": 4,
+                        "abi_sequence": 5
+                    },
+                    "receiver": "gm",
+                    "act": {
+                        "data": {
+                            "from": "gm",
+                            "to": "eosio.stake",
+                            "quantity": "100.0000 EOS",
+                            "memo": "stake bandwidth"
+                        },
+                        "account": "eosio.token",
+                        "name": "transfer",
+                        "authorization": [
+                            {
+                                "actor": "gm",
+                                "permission": "active"
+                            }
+                        ],
+                        "hex_data": "00000000000080640014341903ea305540420f000000000004454f53000000000f7374616b652062616e647769647468"
+                    },
+                    "context_free": false,
+                    "elapsed": 2,
+                    "block_num": 244968779,
+                    "producer_block_id": "0e99ed4b9932c426a0abd7263dd0296592570bd485aa83ec4f86fecfe6c74ef4",
+                    "creator_action_ordinal": 22,
+                    "closest_unnotified_ancestor_action_ordinal": 22,
+                    "trx_id": "dddc7c2d7eaa1987077c1b5559ada40ce001eca1ea7c098525daaf763bf508ab",
+                    "block_time": "2026-01-13T22:07:40.000"
+                },
+                "irreversible": true
+            },
+            {
+                "global_action_seq": 320226681,
+                "block_num": 244968779,
+                "block_time": "2026-01-13T22:07:40.000",
+                "action_trace": {
+                    "receiver": "eosio.token",
+                    "act": {
+                        "account": "eosio.token",
+                        "name": "open",
+                        "authorization": [
+                            {
+                                "actor": "gm",
+                                "permission": "active"
+                            }
+                        ],
+                        "hex_data": "0024032b526e928604454f53000000000000000000008064",
+                        "data": {
+                            "symbol": "4,EOS",
+                            "ram_payer": "gm",
+                            "owner": "kudawolf.gm"
+                        }
+                    },
+                    "context_free": false,
+                    "trx_id": "dddc7c2d7eaa1987077c1b5559ada40ce001eca1ea7c098525daaf763bf508ab",
+                    "block_num": 244968779,
+                    "account_ram_deltas": [
+                        {
+                            "account": "gm",
+                            "delta": 240
+                        }
+                    ],
+                    "action_ordinal": 4,
+                    "closest_unnotified_ancestor_action_ordinal": 0,
+                    "elapsed": 15,
+                    "block_time": "2026-01-13T22:07:40.000",
+                    "producer_block_id": "0e99ed4b9932c426a0abd7263dd0296592570bd485aa83ec4f86fecfe6c74ef4",
+                    "creator_action_ordinal": 0,
+                    "receipt": {
+                        "receiver": "eosio.token",
+                        "act_digest": "a01263d424ed6ff33c636b07861b2793be8d86110fcd4aedf02411b240a05d84",
+                        "global_sequence": 320226681,
+                        "recv_sequence": 8604345,
+                        "auth_sequence": [
+                            [
+                                "gm",
+                                40410
+                            ]
+                        ],
+                        "code_sequence": 4,
+                        "abi_sequence": 5
+                    }
+                },
+                "irreversible": true
+            }
+        ],
+        "next_cursor": "eyJnIjozMjAyMjY2ODEsIm8iOiJhc2MiLCJxIjoiQ3FKL3k1S2ZJT009In0=",
+        "prev_cursor": "eyJnIjozMjAyMjY2NjYsIm8iOiJkZXNjIiwicSI6IkNxSi95NUtmSU9NPSJ9"
+    },
+    "text": "{\"results\":[{\"global_action_seq\":320226666,\"block_num\":244968779,\"block_time\":\"2026-01-13T22:07:40.000\",\"action_trace\":{\"receipt\":{\"receiver\":\"gm\",\"act_digest\":\"906ed0387ce0e9b510f586ae39d03413490fede0df879cf936560cb42eee3473\",\"global_sequence\":320226666,\"recv_sequence\":13044,\"auth_sequence\":[[\"gm\",40404]],\"code_sequence\":4,\"abi_sequence\":5},\"receiver\":\"gm\",\"act\":{\"name\":\"transfer\",\"authorization\":[{\"actor\":\"gm\",\"permission\":\"active\"}],\"hex_data\":\"0000000000008064a0d492e602ea3055f60100000000000004454f53000000000772616d20666565\",\"data\":{\"quantity\":\"0.0502 EOS\",\"memo\":\"ram fee\",\"from\":\"gm\",\"to\":\"eosio.ramfee\"},\"account\":\"eosio.token\"},\"elapsed\":2,\"trx_id\":\"dddc7c2d7eaa1987077c1b5559ada40ce001eca1ea7c098525daaf763bf508ab\",\"context_free\":false,\"block_num\":244968779,\"block_time\":\"2026-01-13T22:07:40.000\",\"producer_block_id\":\"0e99ed4b9932c426a0abd7263dd0296592570bd485aa83ec4f86fecfe6c74ef4\",\"account_ram_deltas\":[],\"action_ordinal\":15,\"creator_action_ordinal\":8,\"closest_unnotified_ancestor_action_ordinal\":8},\"irreversible\":true},{\"global_action_seq\":320226674,\"block_num\":244968779,\"block_time\":\"2026-01-13T22:07:40.000\",\"action_trace\":{\"receipt\":{\"receiver\":\"gm\",\"act_digest\":\"b855eae53532f0f93bcd6e07abebf7c0efa25ec3137d21ce9be6addc0706e0b9\",\"global_sequence\":320226674,\"recv_sequence\":13045,\"auth_sequence\":[[\"eosio\",245525189]],\"code_sequence\":14,\"abi_sequence\":15},\"elapsed\":3,\"trx_id\":\"dddc7c2d7eaa1987077c1b5559ada40ce001eca1ea7c098525daaf763bf508ab\",\"block_num\":244968779,\"block_time\":\"2026-01-13T22:07:40.000\",\"receiver\":\"gm\",\"act\":{\"authorization\":[{\"actor\":\"eosio\",\"permission\":\"active\"}],\"hex_data\":\"00000000000080640024032b526e9286208801000000000004454f53000000004fc30000000000004fc3000000000000f60100000000000004454f5300000000\",\"data\":{\"fee\":\"0.0502 EOS\",\"payer\":\"gm\",\"receiver\":\"kudawolf.gm\",\"quantity\":\"10.0384 EOS\",\"bytes\":49999,\"ram_bytes\":49999},\"account\":\"eosio\",\"name\":\"logbuyram\"},\"context_free\":false,\"producer_block_id\":\"0e99ed4b9932c426a0abd7263dd0296592570bd485aa83ec4f86fecfe6c74ef4\",\"account_ram_deltas\":[],\"action_ordinal\":20,\"creator_action_ordinal\":11,\"closest_unnotified_ancestor_action_ordinal\":11},\"irreversible\":true},{\"global_action_seq\":320226677,\"block_num\":244968779,\"block_time\":\"2026-01-13T22:07:40.000\",\"action_trace\":{\"context_free\":false,\"elapsed\":39,\"trx_id\":\"dddc7c2d7eaa1987077c1b5559ada40ce001eca1ea7c098525daaf763bf508ab\",\"block_num\":244968779,\"block_time\":\"2026-01-13T22:07:40.000\",\"producer_block_id\":\"0e99ed4b9932c426a0abd7263dd0296592570bd485aa83ec4f86fecfe6c74ef4\",\"account_ram_deltas\":[{\"account\":\"kudawolf.gm\",\"delta\":450}],\"action_ordinal\":3,\"creator_action_ordinal\":0,\"closest_unnotified_ancestor_action_ordinal\":0,\"receipt\":{\"receiver\":\"eosio\",\"act_digest\":\"9626a160754068a71bd02a321d809a4c6a53c3a22f1fd51deb19c0b5d00331cb\",\"global_sequence\":320226677,\"recv_sequence\":245512288,\"auth_sequence\":[[\"gm\",40406]],\"code_sequence\":14,\"abi_sequence\":15},\"receiver\":\"eosio\",\"act\":{\"authorization\":[{\"actor\":\"gm\",\"permission\":\"active\"}],\"hex_data\":\"00000000000080640024032b526e928650c300000000000004454f5300000000f07e0e000000000004454f530000000001\",\"data\":{\"receiver\":\"kudawolf.gm\",\"stake_net_quantity\":\"5.0000 EOS\",\"stake_cpu_quantity\":\"95.0000 EOS\",\"transfer\":true,\"from\":\"gm\"},\"account\":\"eosio\",\"name\":\"delegatebw\"}},\"irreversible\":true},{\"global_action_seq\":320226679,\"block_num\":244968779,\"block_time\":\"2026-01-13T22:07:40.000\",\"action_trace\":{\"account_ram_deltas\":[],\"action_ordinal\":23,\"receipt\":{\"receiver\":\"gm\",\"act_digest\":\"fc3bd433f0025a8bb43674f0c80e7b5890b58095099c31ab8c9a39f3eb875074\",\"global_sequence\":320226679,\"recv_sequence\":13046,\"auth_sequence\":[[\"gm\",40408]],\"code_sequence\":4,\"abi_sequence\":5},\"receiver\":\"gm\",\"act\":{\"data\":{\"from\":\"gm\",\"to\":\"eosio.stake\",\"quantity\":\"100.0000 EOS\",\"memo\":\"stake bandwidth\"},\"account\":\"eosio.token\",\"name\":\"transfer\",\"authorization\":[{\"actor\":\"gm\",\"permission\":\"active\"}],\"hex_data\":\"00000000000080640014341903ea305540420f000000000004454f53000000000f7374616b652062616e647769647468\"},\"context_free\":false,\"elapsed\":2,\"block_num\":244968779,\"producer_block_id\":\"0e99ed4b9932c426a0abd7263dd0296592570bd485aa83ec4f86fecfe6c74ef4\",\"creator_action_ordinal\":22,\"closest_unnotified_ancestor_action_ordinal\":22,\"trx_id\":\"dddc7c2d7eaa1987077c1b5559ada40ce001eca1ea7c098525daaf763bf508ab\",\"block_time\":\"2026-01-13T22:07:40.000\"},\"irreversible\":true},{\"global_action_seq\":320226681,\"block_num\":244968779,\"block_time\":\"2026-01-13T22:07:40.000\",\"action_trace\":{\"receiver\":\"eosio.token\",\"act\":{\"account\":\"eosio.token\",\"name\":\"open\",\"authorization\":[{\"actor\":\"gm\",\"permission\":\"active\"}],\"hex_data\":\"0024032b526e928604454f53000000000000000000008064\",\"data\":{\"symbol\":\"4,EOS\",\"ram_payer\":\"gm\",\"owner\":\"kudawolf.gm\"}},\"context_free\":false,\"trx_id\":\"dddc7c2d7eaa1987077c1b5559ada40ce001eca1ea7c098525daaf763bf508ab\",\"block_num\":244968779,\"account_ram_deltas\":[{\"account\":\"gm\",\"delta\":240}],\"action_ordinal\":4,\"closest_unnotified_ancestor_action_ordinal\":0,\"elapsed\":15,\"block_time\":\"2026-01-13T22:07:40.000\",\"producer_block_id\":\"0e99ed4b9932c426a0abd7263dd0296592570bd485aa83ec4f86fecfe6c74ef4\",\"creator_action_ordinal\":0,\"receipt\":{\"receiver\":\"eosio.token\",\"act_digest\":\"a01263d424ed6ff33c636b07861b2793be8d86110fcd4aedf02411b240a05d84\",\"global_sequence\":320226681,\"recv_sequence\":8604345,\"auth_sequence\":[[\"gm\",40410]],\"code_sequence\":4,\"abi_sequence\":5}},\"irreversible\":true}],\"next_cursor\":\"eyJnIjozMjAyMjY2ODEsIm8iOiJhc2MiLCJxIjoiQ3FKL3k1S2ZJT009In0=\",\"prev_cursor\":\"eyJnIjozMjAyMjY2NjYsIm8iOiJkZXNjIiwicSI6IkNxSi95NUtmSU9NPSJ9\"}"
+}

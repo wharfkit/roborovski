@@ -1,0 +1,546 @@
+{
+    "request": {
+        "path": "https://jungle4.roborovski.io/account/gm/activity",
+        "params": {
+            "method": "POST",
+            "body": "{\"limit\":10,\"order\":\"desc\",\"decode\":true,\"contract\":\"core.vaulta\"}"
+        }
+    },
+    "status": 200,
+    "json": {
+        "results": [
+            {
+                "global_action_seq": 315934506,
+                "block_num": 241230799,
+                "block_time": "2025-12-23T06:43:25.000",
+                "action_trace": {
+                    "receiver": "core.vaulta",
+                    "context_free": false,
+                    "elapsed": 10,
+                    "trx_id": "fe30da12ef2f271d79aa073c31c14e510755d0a1f881f9aeeb9ecfe1bbe1c605",
+                    "block_num": 241230799,
+                    "action_ordinal": 7,
+                    "creator_action_ordinal": 2,
+                    "closest_unnotified_ancestor_action_ordinal": 2,
+                    "receipt": {
+                        "receiver": "core.vaulta",
+                        "act_digest": "cc005a10641c21954fa2e0d646c463ea4fcd16a22fa6a89f8af548cc2205ef57",
+                        "global_sequence": 315934506,
+                        "recv_sequence": 53207,
+                        "auth_sequence": [
+                            [
+                                "gm",
+                                39760
+                            ]
+                        ],
+                        "code_sequence": 2,
+                        "abi_sequence": 2
+                    },
+                    "act": {
+                        "account": "core.vaulta",
+                        "name": "enforcebal",
+                        "authorization": [
+                            {
+                                "actor": "gm",
+                                "permission": "active"
+                            }
+                        ],
+                        "hex_data": "0000000000008064db299b8c0000000004454f5300000000",
+                        "data": {
+                            "account": "gm",
+                            "expected_eos_balance": "235897.9035 EOS"
+                        }
+                    },
+                    "block_time": "2025-12-23T06:43:25.000",
+                    "producer_block_id": "0e60e3cf87536112f6fd5141ca972c0701d0325dd2e04eeb88a533877ad6f755",
+                    "account_ram_deltas": []
+                },
+                "irreversible": true
+            },
+            {
+                "global_action_seq": 315934483,
+                "block_num": 241230799,
+                "block_time": "2025-12-23T06:43:25.000",
+                "action_trace": {
+                    "elapsed": 43,
+                    "producer_block_id": "0e60e3cf87536112f6fd5141ca972c0701d0325dd2e04eeb88a533877ad6f755",
+                    "receiver": "core.vaulta",
+                    "trx_id": "fe30da12ef2f271d79aa073c31c14e510755d0a1f881f9aeeb9ecfe1bbe1c605",
+                    "block_num": 241230799,
+                    "block_time": "2025-12-23T06:43:25.000",
+                    "account_ram_deltas": [],
+                    "action_ordinal": 2,
+                    "creator_action_ordinal": 0,
+                    "closest_unnotified_ancestor_action_ordinal": 0,
+                    "receipt": {
+                        "receiver": "core.vaulta",
+                        "act_digest": "7f5fbda59b1e3c6b1a5b830da0c9c6d2f5b49518b248cae37bf1174fe3886eef",
+                        "global_sequence": 315934483,
+                        "recv_sequence": 53204,
+                        "auth_sequence": [
+                            [
+                                "gm",
+                                39750
+                            ]
+                        ],
+                        "code_sequence": 2,
+                        "abi_sequence": 2
+                    },
+                    "act": {
+                        "data": {
+                            "payer": "gm",
+                            "receiver": "agent.gm",
+                            "bytes": 5000
+                        },
+                        "account": "core.vaulta",
+                        "name": "buyrambytes",
+                        "authorization": [
+                            {
+                                "actor": "gm",
+                                "permission": "active"
+                            }
+                        ],
+                        "hex_data": "000000000000806400000092813c153388130000"
+                    },
+                    "context_free": false
+                },
+                "irreversible": true
+            },
+            {
+                "global_action_seq": 315934481,
+                "block_num": 241230799,
+                "block_time": "2025-12-23T06:43:25.000",
+                "action_trace": {
+                    "block_time": "2025-12-23T06:43:25.000",
+                    "account_ram_deltas": [],
+                    "action_ordinal": 1,
+                    "closest_unnotified_ancestor_action_ordinal": 0,
+                    "act": {
+                        "account": "core.vaulta",
+                        "name": "newaccount",
+                        "authorization": [
+                            {
+                                "actor": "gm",
+                                "permission": "active"
+                            }
+                        ],
+                        "hex_data": "000000000000806400000092813c153301000000010003a2ba18d7d8bdcc5a082b948223fc292d042796640635f5077fec54917ba2325c0100000001000000010003a2ba18d7d8bdcc5a082b948223fc292d042796640635f5077fec54917ba2325c01000000",
+                        "data": {
+                            "active": {
+                                "threshold": 1,
+                                "keys": [
+                                    {
+                                        "key": "PUB_K1_84uAtkJoXMjefZfgK9eFJjSTB6KBevneFqhHC2zYBmEQ6TxZxU",
+                                        "weight": 1
+                                    }
+                                ],
+                                "accounts": [],
+                                "waits": []
+                            },
+                            "creator": "gm",
+                            "name": "agent.gm",
+                            "owner": {
+                                "threshold": 1,
+                                "keys": [
+                                    {
+                                        "weight": 1,
+                                        "key": "PUB_K1_84uAtkJoXMjefZfgK9eFJjSTB6KBevneFqhHC2zYBmEQ6TxZxU"
+                                    }
+                                ],
+                                "accounts": [],
+                                "waits": []
+                            }
+                        }
+                    },
+                    "context_free": false,
+                    "elapsed": 28,
+                    "trx_id": "fe30da12ef2f271d79aa073c31c14e510755d0a1f881f9aeeb9ecfe1bbe1c605",
+                    "block_num": 241230799,
+                    "producer_block_id": "0e60e3cf87536112f6fd5141ca972c0701d0325dd2e04eeb88a533877ad6f755",
+                    "creator_action_ordinal": 0,
+                    "receipt": {
+                        "receiver": "core.vaulta",
+                        "act_digest": "a17a8806452956ec59134688d44b62f45c07643539adf71e0264e28854fa5123",
+                        "global_sequence": 315934481,
+                        "recv_sequence": 53203,
+                        "auth_sequence": [
+                            [
+                                "gm",
+                                39748
+                            ]
+                        ],
+                        "code_sequence": 2,
+                        "abi_sequence": 2
+                    },
+                    "receiver": "core.vaulta"
+                },
+                "irreversible": true
+            },
+            {
+                "global_action_seq": 312648801,
+                "block_num": 238382810,
+                "block_time": "2025-12-06T18:47:13.000",
+                "action_trace": {
+                    "context_free": false,
+                    "elapsed": 11,
+                    "block_num": 238382810,
+                    "producer_block_id": "0e356edaf5bebf75bfc4eed3a1a06eea2e7cebbbba6277b843e3c6d717bef5b6",
+                    "action_ordinal": 2,
+                    "creator_action_ordinal": 0,
+                    "closest_unnotified_ancestor_action_ordinal": 0,
+                    "act": {
+                        "account": "core.vaulta",
+                        "name": "buyrex",
+                        "authorization": [
+                            {
+                                "actor": "gm",
+                                "permission": "active"
+                            }
+                        ],
+                        "hex_data": "000000000000806410270000000000000441000000000000",
+                        "data": {
+                            "from": "gm",
+                            "amount": "1.0000 A"
+                        }
+                    },
+                    "trx_id": "60bb3fa317d4114701ee231c2addd5a2d44ba8fa3e6f9685a745dd4eed867722",
+                    "block_time": "2025-12-06T18:47:13.000",
+                    "account_ram_deltas": [],
+                    "receipt": {
+                        "receiver": "core.vaulta",
+                        "act_digest": "6a8180a204b822c660f90c6c3ee4b459c5b6719c16dc9ee84d4ffd7810682071",
+                        "global_sequence": 312648801,
+                        "recv_sequence": 50146,
+                        "auth_sequence": [
+                            [
+                                "gm",
+                                38925
+                            ]
+                        ],
+                        "code_sequence": 2,
+                        "abi_sequence": 2
+                    },
+                    "receiver": "core.vaulta"
+                },
+                "irreversible": true
+            },
+            {
+                "global_action_seq": 312648792,
+                "block_num": 238382810,
+                "block_time": "2025-12-06T18:47:13.000",
+                "action_trace": {
+                    "block_time": "2025-12-06T18:47:13.000",
+                    "producer_block_id": "0e356edaf5bebf75bfc4eed3a1a06eea2e7cebbbba6277b843e3c6d717bef5b6",
+                    "creator_action_ordinal": 0,
+                    "closest_unnotified_ancestor_action_ordinal": 0,
+                    "receipt": {
+                        "receiver": "core.vaulta",
+                        "act_digest": "cd593ef560256da7859e47bdad2cb328327079c5d41ff2301a8c5e8c110d4906",
+                        "global_sequence": 312648792,
+                        "recv_sequence": 50143,
+                        "auth_sequence": [
+                            [
+                                "gm",
+                                38920
+                            ]
+                        ],
+                        "code_sequence": 2,
+                        "abi_sequence": 2
+                    },
+                    "receiver": "core.vaulta",
+                    "account_ram_deltas": [],
+                    "action_ordinal": 1,
+                    "act": {
+                        "account": "core.vaulta",
+                        "name": "deposit",
+                        "authorization": [
+                            {
+                                "actor": "gm",
+                                "permission": "active"
+                            }
+                        ],
+                        "hex_data": "000000000000806410270000000000000441000000000000",
+                        "data": {
+                            "owner": "gm",
+                            "amount": "1.0000 A"
+                        }
+                    },
+                    "context_free": false,
+                    "elapsed": 46,
+                    "trx_id": "60bb3fa317d4114701ee231c2addd5a2d44ba8fa3e6f9685a745dd4eed867722",
+                    "block_num": 238382810
+                },
+                "irreversible": true
+            },
+            {
+                "global_action_seq": 312326429,
+                "block_num": 238108844,
+                "block_time": "2025-12-05T04:44:04.000",
+                "action_trace": {
+                    "act": {
+                        "authorization": [
+                            {
+                                "actor": "gm",
+                                "permission": "active"
+                            }
+                        ],
+                        "hex_data": "0000000000008064ea601a930000000004454f5300000000",
+                        "data": {
+                            "account": "gm",
+                            "expected_eos_balance": "246797.9498 EOS"
+                        },
+                        "account": "core.vaulta",
+                        "name": "enforcebal"
+                    },
+                    "context_free": false,
+                    "trx_id": "7a480137930dea7f61d443b6d1a249d3f00b55f6eb0ef7754bb08599d7127588",
+                    "account_ram_deltas": [],
+                    "action_ordinal": 7,
+                    "creator_action_ordinal": 2,
+                    "receipt": {
+                        "receiver": "core.vaulta",
+                        "act_digest": "b5dc9429cfd3b6045465c786bf5b895cb5601b1d8e38ac2be526fcb87e34ba4e",
+                        "global_sequence": 312326429,
+                        "recv_sequence": 49726,
+                        "auth_sequence": [
+                            [
+                                "gm",
+                                38830
+                            ]
+                        ],
+                        "code_sequence": 2,
+                        "abi_sequence": 2
+                    },
+                    "receiver": "core.vaulta",
+                    "elapsed": 11,
+                    "block_num": 238108844,
+                    "block_time": "2025-12-05T04:44:04.000",
+                    "producer_block_id": "0e3140ac151ccf55b83360b459095d72b2cb7e7155eeb48857d439915845e68c",
+                    "closest_unnotified_ancestor_action_ordinal": 2
+                },
+                "irreversible": true
+            },
+            {
+                "global_action_seq": 312326406,
+                "block_num": 238108844,
+                "block_time": "2025-12-05T04:44:04.000",
+                "action_trace": {
+                    "action_ordinal": 2,
+                    "receipt": {
+                        "receiver": "core.vaulta",
+                        "act_digest": "033e4e50e9fb7753fc583d10c45686c15630a1e9c74e34ec9c4c1d738db7425c",
+                        "global_sequence": 312326406,
+                        "recv_sequence": 49723,
+                        "auth_sequence": [
+                            [
+                                "gm",
+                                38820
+                            ]
+                        ],
+                        "code_sequence": 2,
+                        "abi_sequence": 2
+                    },
+                    "receiver": "core.vaulta",
+                    "context_free": false,
+                    "block_time": "2025-12-05T04:44:04.000",
+                    "account_ram_deltas": [],
+                    "creator_action_ordinal": 0,
+                    "closest_unnotified_ancestor_action_ordinal": 0,
+                    "act": {
+                        "name": "buyrambytes",
+                        "authorization": [
+                            {
+                                "actor": "gm",
+                                "permission": "active"
+                            }
+                        ],
+                        "hex_data": "00000000000080642019c8534997a7c290d00300",
+                        "data": {
+                            "receiver": "sentiment.gm",
+                            "bytes": 250000,
+                            "payer": "gm"
+                        },
+                        "account": "core.vaulta"
+                    },
+                    "elapsed": 45,
+                    "trx_id": "7a480137930dea7f61d443b6d1a249d3f00b55f6eb0ef7754bb08599d7127588",
+                    "block_num": 238108844,
+                    "producer_block_id": "0e3140ac151ccf55b83360b459095d72b2cb7e7155eeb48857d439915845e68c"
+                },
+                "irreversible": true
+            },
+            {
+                "global_action_seq": 312326404,
+                "block_num": 238108844,
+                "block_time": "2025-12-05T04:44:04.000",
+                "action_trace": {
+                    "context_free": false,
+                    "block_num": 238108844,
+                    "block_time": "2025-12-05T04:44:04.000",
+                    "account_ram_deltas": [],
+                    "action_ordinal": 1,
+                    "creator_action_ordinal": 0,
+                    "act": {
+                        "account": "core.vaulta",
+                        "name": "newaccount",
+                        "authorization": [
+                            {
+                                "actor": "gm",
+                                "permission": "active"
+                            }
+                        ],
+                        "hex_data": "00000000000080642019c8534997a7c201000000010002ca21e0132ea67953bc218229cb1cf805008cbc3c84ae7218686a5277c97c8027010000000100000001000252b3b8377d283f668b1860d399997cb69ecf5e367c1fa9e4de0571fca870799101000000",
+                        "data": {
+                            "owner": {
+                                "threshold": 1,
+                                "keys": [
+                                    {
+                                        "key": "PUB_K1_6RWZ1CmDL4B6LdixuertnzxcRuUDac3NQspJEvMnebGcXY4zZj",
+                                        "weight": 1
+                                    }
+                                ],
+                                "accounts": [],
+                                "waits": []
+                            },
+                            "active": {
+                                "accounts": [],
+                                "waits": [],
+                                "threshold": 1,
+                                "keys": [
+                                    {
+                                        "key": "PUB_K1_5WusBSjQ1zAA7VFcw2MJ769942k5a1TRWypXkhWfu1zfd1iBS5",
+                                        "weight": 1
+                                    }
+                                ]
+                            },
+                            "creator": "gm",
+                            "name": "sentiment.gm"
+                        }
+                    },
+                    "elapsed": 29,
+                    "trx_id": "7a480137930dea7f61d443b6d1a249d3f00b55f6eb0ef7754bb08599d7127588",
+                    "producer_block_id": "0e3140ac151ccf55b83360b459095d72b2cb7e7155eeb48857d439915845e68c",
+                    "closest_unnotified_ancestor_action_ordinal": 0,
+                    "receipt": {
+                        "receiver": "core.vaulta",
+                        "act_digest": "1f0167de28c069fbb896c5a625d678ed36d6621395818f574dc6f1cf35646e90",
+                        "global_sequence": 312326404,
+                        "recv_sequence": 49722,
+                        "auth_sequence": [
+                            [
+                                "gm",
+                                38818
+                            ]
+                        ],
+                        "code_sequence": 2,
+                        "abi_sequence": 2
+                    },
+                    "receiver": "core.vaulta"
+                },
+                "irreversible": true
+            },
+            {
+                "global_action_seq": 303212919,
+                "block_num": 230124246,
+                "block_time": "2025-10-19T23:38:01.500",
+                "action_trace": {
+                    "receipt": {
+                        "receiver": "gm",
+                        "act_digest": "773d75e5632d9a2cc7bfc999bdb5017bbd4aef315ac7a28aa4758df14fde0359",
+                        "global_sequence": 303212919,
+                        "recv_sequence": 11998,
+                        "auth_sequence": [
+                            [
+                                "gm",
+                                37271
+                            ]
+                        ],
+                        "code_sequence": 2,
+                        "abi_sequence": 2
+                    },
+                    "elapsed": 1,
+                    "trx_id": "7cb5ccc208a8981eba59db77111da08b671fea3f1ba63034288a03ae3ec6aabe",
+                    "receiver": "gm",
+                    "act": {
+                        "account": "core.vaulta",
+                        "name": "transfer",
+                        "authorization": [
+                            {
+                                "actor": "gm",
+                                "permission": "active"
+                            }
+                        ],
+                        "hex_data": "00000000000080640000900ca86cd445be190000000000000441000000000000556c646c6b7878636f757a71672d5055425f57415f3578794d7663674e596739714a724a74414a595358693372513564746d75454b514664424472314b6a4a705344674d566277614a6147394b4e776d353364754455",
+                        "data": {
+                            "from": "gm",
+                            "to": "create.gm",
+                            "quantity": "0.6590 A",
+                            "memo": "ldlkxxcouzqg-PUB_WA_5xyMvcgNYg9qJrJtAJYSXi3rQ5dtmuEKQFdBDr1KjJpSDgMVbwaJaG9KNwm53duDU"
+                        }
+                    },
+                    "context_free": false,
+                    "block_num": 230124246,
+                    "block_time": "2025-10-19T23:38:01.500",
+                    "producer_block_id": "0db76ad62af536449de65f9c0a5e2a9f383c5c8f771655a0743e4f03d080f2ad",
+                    "account_ram_deltas": [],
+                    "action_ordinal": 2,
+                    "creator_action_ordinal": 1,
+                    "closest_unnotified_ancestor_action_ordinal": 1
+                },
+                "irreversible": true
+            },
+            {
+                "global_action_seq": 303212434,
+                "block_num": 230123838,
+                "block_time": "2025-10-19T23:34:37.500",
+                "action_trace": {
+                    "receipt": {
+                        "receiver": "gm",
+                        "act_digest": "5d4c70ec8184ea766d95578d325f5119ef6903e36f2d171946c86814d06d196f",
+                        "global_sequence": 303212434,
+                        "recv_sequence": 11997,
+                        "auth_sequence": [
+                            [
+                                "gm",
+                                37268
+                            ]
+                        ],
+                        "code_sequence": 2,
+                        "abi_sequence": 2
+                    },
+                    "act": {
+                        "account": "core.vaulta",
+                        "name": "transfer",
+                        "authorization": [
+                            {
+                                "actor": "gm",
+                                "permission": "active"
+                            }
+                        ],
+                        "hex_data": "00000000000080640000900ca86cd445be190000000000000441000000000000466a6b686e6161686f66356b6f2d5055425f4b315f3652743943364b584c544332434333587a52325644464b7731353332767a7751656842576747653835437737597068544853",
+                        "data": {
+                            "memo": "jkhnaahof5ko-PUB_K1_6Rt9C6KXLTC2CC3XzR2VDFKw1532vzwQehBWgGe85Cw7YphTHS",
+                            "from": "gm",
+                            "to": "create.gm",
+                            "quantity": "0.6590 A"
+                        }
+                    },
+                    "elapsed": 1,
+                    "trx_id": "eef7d65ba80535dc69f74873d87e23ea4cfc1c5b51e371fb34325087ba3601af",
+                    "block_time": "2025-10-19T23:34:37.500",
+                    "producer_block_id": "0db7693e42a8bff62bdf6ee5d50def729aa4f69095661ca9230cc53bd23f18fe",
+                    "action_ordinal": 2,
+                    "closest_unnotified_ancestor_action_ordinal": 1,
+                    "receiver": "gm",
+                    "context_free": false,
+                    "block_num": 230123838,
+                    "account_ram_deltas": [],
+                    "creator_action_ordinal": 1
+                },
+                "irreversible": true
+            }
+        ],
+        "next_cursor": "eyJnIjozMDMyMTI0MzQsIm8iOiJkZXNjIiwicSI6IkdwVzYrcmMxb2wwPSJ9"
+    },
+    "text": "{\"results\":[{\"global_action_seq\":315934506,\"block_num\":241230799,\"block_time\":\"2025-12-23T06:43:25.000\",\"action_trace\":{\"receiver\":\"core.vaulta\",\"context_free\":false,\"elapsed\":10,\"trx_id\":\"fe30da12ef2f271d79aa073c31c14e510755d0a1f881f9aeeb9ecfe1bbe1c605\",\"block_num\":241230799,\"action_ordinal\":7,\"creator_action_ordinal\":2,\"closest_unnotified_ancestor_action_ordinal\":2,\"receipt\":{\"receiver\":\"core.vaulta\",\"act_digest\":\"cc005a10641c21954fa2e0d646c463ea4fcd16a22fa6a89f8af548cc2205ef57\",\"global_sequence\":315934506,\"recv_sequence\":53207,\"auth_sequence\":[[\"gm\",39760]],\"code_sequence\":2,\"abi_sequence\":2},\"act\":{\"account\":\"core.vaulta\",\"name\":\"enforcebal\",\"authorization\":[{\"actor\":\"gm\",\"permission\":\"active\"}],\"hex_data\":\"0000000000008064db299b8c0000000004454f5300000000\",\"data\":{\"account\":\"gm\",\"expected_eos_balance\":\"235897.9035 EOS\"}},\"block_time\":\"2025-12-23T06:43:25.000\",\"producer_block_id\":\"0e60e3cf87536112f6fd5141ca972c0701d0325dd2e04eeb88a533877ad6f755\",\"account_ram_deltas\":[]},\"irreversible\":true},{\"global_action_seq\":315934483,\"block_num\":241230799,\"block_time\":\"2025-12-23T06:43:25.000\",\"action_trace\":{\"elapsed\":43,\"producer_block_id\":\"0e60e3cf87536112f6fd5141ca972c0701d0325dd2e04eeb88a533877ad6f755\",\"receiver\":\"core.vaulta\",\"trx_id\":\"fe30da12ef2f271d79aa073c31c14e510755d0a1f881f9aeeb9ecfe1bbe1c605\",\"block_num\":241230799,\"block_time\":\"2025-12-23T06:43:25.000\",\"account_ram_deltas\":[],\"action_ordinal\":2,\"creator_action_ordinal\":0,\"closest_unnotified_ancestor_action_ordinal\":0,\"receipt\":{\"receiver\":\"core.vaulta\",\"act_digest\":\"7f5fbda59b1e3c6b1a5b830da0c9c6d2f5b49518b248cae37bf1174fe3886eef\",\"global_sequence\":315934483,\"recv_sequence\":53204,\"auth_sequence\":[[\"gm\",39750]],\"code_sequence\":2,\"abi_sequence\":2},\"act\":{\"data\":{\"payer\":\"gm\",\"receiver\":\"agent.gm\",\"bytes\":5000},\"account\":\"core.vaulta\",\"name\":\"buyrambytes\",\"authorization\":[{\"actor\":\"gm\",\"permission\":\"active\"}],\"hex_data\":\"000000000000806400000092813c153388130000\"},\"context_free\":false},\"irreversible\":true},{\"global_action_seq\":315934481,\"block_num\":241230799,\"block_time\":\"2025-12-23T06:43:25.000\",\"action_trace\":{\"block_time\":\"2025-12-23T06:43:25.000\",\"account_ram_deltas\":[],\"action_ordinal\":1,\"closest_unnotified_ancestor_action_ordinal\":0,\"act\":{\"account\":\"core.vaulta\",\"name\":\"newaccount\",\"authorization\":[{\"actor\":\"gm\",\"permission\":\"active\"}],\"hex_data\":\"000000000000806400000092813c153301000000010003a2ba18d7d8bdcc5a082b948223fc292d042796640635f5077fec54917ba2325c0100000001000000010003a2ba18d7d8bdcc5a082b948223fc292d042796640635f5077fec54917ba2325c01000000\",\"data\":{\"active\":{\"threshold\":1,\"keys\":[{\"key\":\"PUB_K1_84uAtkJoXMjefZfgK9eFJjSTB6KBevneFqhHC2zYBmEQ6TxZxU\",\"weight\":1}],\"accounts\":[],\"waits\":[]},\"creator\":\"gm\",\"name\":\"agent.gm\",\"owner\":{\"threshold\":1,\"keys\":[{\"weight\":1,\"key\":\"PUB_K1_84uAtkJoXMjefZfgK9eFJjSTB6KBevneFqhHC2zYBmEQ6TxZxU\"}],\"accounts\":[],\"waits\":[]}}},\"context_free\":false,\"elapsed\":28,\"trx_id\":\"fe30da12ef2f271d79aa073c31c14e510755d0a1f881f9aeeb9ecfe1bbe1c605\",\"block_num\":241230799,\"producer_block_id\":\"0e60e3cf87536112f6fd5141ca972c0701d0325dd2e04eeb88a533877ad6f755\",\"creator_action_ordinal\":0,\"receipt\":{\"receiver\":\"core.vaulta\",\"act_digest\":\"a17a8806452956ec59134688d44b62f45c07643539adf71e0264e28854fa5123\",\"global_sequence\":315934481,\"recv_sequence\":53203,\"auth_sequence\":[[\"gm\",39748]],\"code_sequence\":2,\"abi_sequence\":2},\"receiver\":\"core.vaulta\"},\"irreversible\":true},{\"global_action_seq\":312648801,\"block_num\":238382810,\"block_time\":\"2025-12-06T18:47:13.000\",\"action_trace\":{\"context_free\":false,\"elapsed\":11,\"block_num\":238382810,\"producer_block_id\":\"0e356edaf5bebf75bfc4eed3a1a06eea2e7cebbbba6277b843e3c6d717bef5b6\",\"action_ordinal\":2,\"creator_action_ordinal\":0,\"closest_unnotified_ancestor_action_ordinal\":0,\"act\":{\"account\":\"core.vaulta\",\"name\":\"buyrex\",\"authorization\":[{\"actor\":\"gm\",\"permission\":\"active\"}],\"hex_data\":\"000000000000806410270000000000000441000000000000\",\"data\":{\"from\":\"gm\",\"amount\":\"1.0000 A\"}},\"trx_id\":\"60bb3fa317d4114701ee231c2addd5a2d44ba8fa3e6f9685a745dd4eed867722\",\"block_time\":\"2025-12-06T18:47:13.000\",\"account_ram_deltas\":[],\"receipt\":{\"receiver\":\"core.vaulta\",\"act_digest\":\"6a8180a204b822c660f90c6c3ee4b459c5b6719c16dc9ee84d4ffd7810682071\",\"global_sequence\":312648801,\"recv_sequence\":50146,\"auth_sequence\":[[\"gm\",38925]],\"code_sequence\":2,\"abi_sequence\":2},\"receiver\":\"core.vaulta\"},\"irreversible\":true},{\"global_action_seq\":312648792,\"block_num\":238382810,\"block_time\":\"2025-12-06T18:47:13.000\",\"action_trace\":{\"block_time\":\"2025-12-06T18:47:13.000\",\"producer_block_id\":\"0e356edaf5bebf75bfc4eed3a1a06eea2e7cebbbba6277b843e3c6d717bef5b6\",\"creator_action_ordinal\":0,\"closest_unnotified_ancestor_action_ordinal\":0,\"receipt\":{\"receiver\":\"core.vaulta\",\"act_digest\":\"cd593ef560256da7859e47bdad2cb328327079c5d41ff2301a8c5e8c110d4906\",\"global_sequence\":312648792,\"recv_sequence\":50143,\"auth_sequence\":[[\"gm\",38920]],\"code_sequence\":2,\"abi_sequence\":2},\"receiver\":\"core.vaulta\",\"account_ram_deltas\":[],\"action_ordinal\":1,\"act\":{\"account\":\"core.vaulta\",\"name\":\"deposit\",\"authorization\":[{\"actor\":\"gm\",\"permission\":\"active\"}],\"hex_data\":\"000000000000806410270000000000000441000000000000\",\"data\":{\"owner\":\"gm\",\"amount\":\"1.0000 A\"}},\"context_free\":false,\"elapsed\":46,\"trx_id\":\"60bb3fa317d4114701ee231c2addd5a2d44ba8fa3e6f9685a745dd4eed867722\",\"block_num\":238382810},\"irreversible\":true},{\"global_action_seq\":312326429,\"block_num\":238108844,\"block_time\":\"2025-12-05T04:44:04.000\",\"action_trace\":{\"act\":{\"authorization\":[{\"actor\":\"gm\",\"permission\":\"active\"}],\"hex_data\":\"0000000000008064ea601a930000000004454f5300000000\",\"data\":{\"account\":\"gm\",\"expected_eos_balance\":\"246797.9498 EOS\"},\"account\":\"core.vaulta\",\"name\":\"enforcebal\"},\"context_free\":false,\"trx_id\":\"7a480137930dea7f61d443b6d1a249d3f00b55f6eb0ef7754bb08599d7127588\",\"account_ram_deltas\":[],\"action_ordinal\":7,\"creator_action_ordinal\":2,\"receipt\":{\"receiver\":\"core.vaulta\",\"act_digest\":\"b5dc9429cfd3b6045465c786bf5b895cb5601b1d8e38ac2be526fcb87e34ba4e\",\"global_sequence\":312326429,\"recv_sequence\":49726,\"auth_sequence\":[[\"gm\",38830]],\"code_sequence\":2,\"abi_sequence\":2},\"receiver\":\"core.vaulta\",\"elapsed\":11,\"block_num\":238108844,\"block_time\":\"2025-12-05T04:44:04.000\",\"producer_block_id\":\"0e3140ac151ccf55b83360b459095d72b2cb7e7155eeb48857d439915845e68c\",\"closest_unnotified_ancestor_action_ordinal\":2},\"irreversible\":true},{\"global_action_seq\":312326406,\"block_num\":238108844,\"block_time\":\"2025-12-05T04:44:04.000\",\"action_trace\":{\"action_ordinal\":2,\"receipt\":{\"receiver\":\"core.vaulta\",\"act_digest\":\"033e4e50e9fb7753fc583d10c45686c15630a1e9c74e34ec9c4c1d738db7425c\",\"global_sequence\":312326406,\"recv_sequence\":49723,\"auth_sequence\":[[\"gm\",38820]],\"code_sequence\":2,\"abi_sequence\":2},\"receiver\":\"core.vaulta\",\"context_free\":false,\"block_time\":\"2025-12-05T04:44:04.000\",\"account_ram_deltas\":[],\"creator_action_ordinal\":0,\"closest_unnotified_ancestor_action_ordinal\":0,\"act\":{\"name\":\"buyrambytes\",\"authorization\":[{\"actor\":\"gm\",\"permission\":\"active\"}],\"hex_data\":\"00000000000080642019c8534997a7c290d00300\",\"data\":{\"receiver\":\"sentiment.gm\",\"bytes\":250000,\"payer\":\"gm\"},\"account\":\"core.vaulta\"},\"elapsed\":45,\"trx_id\":\"7a480137930dea7f61d443b6d1a249d3f00b55f6eb0ef7754bb08599d7127588\",\"block_num\":238108844,\"producer_block_id\":\"0e3140ac151ccf55b83360b459095d72b2cb7e7155eeb48857d439915845e68c\"},\"irreversible\":true},{\"global_action_seq\":312326404,\"block_num\":238108844,\"block_time\":\"2025-12-05T04:44:04.000\",\"action_trace\":{\"context_free\":false,\"block_num\":238108844,\"block_time\":\"2025-12-05T04:44:04.000\",\"account_ram_deltas\":[],\"action_ordinal\":1,\"creator_action_ordinal\":0,\"act\":{\"account\":\"core.vaulta\",\"name\":\"newaccount\",\"authorization\":[{\"actor\":\"gm\",\"permission\":\"active\"}],\"hex_data\":\"00000000000080642019c8534997a7c201000000010002ca21e0132ea67953bc218229cb1cf805008cbc3c84ae7218686a5277c97c8027010000000100000001000252b3b8377d283f668b1860d399997cb69ecf5e367c1fa9e4de0571fca870799101000000\",\"data\":{\"owner\":{\"threshold\":1,\"keys\":[{\"key\":\"PUB_K1_6RWZ1CmDL4B6LdixuertnzxcRuUDac3NQspJEvMnebGcXY4zZj\",\"weight\":1}],\"accounts\":[],\"waits\":[]},\"active\":{\"accounts\":[],\"waits\":[],\"threshold\":1,\"keys\":[{\"key\":\"PUB_K1_5WusBSjQ1zAA7VFcw2MJ769942k5a1TRWypXkhWfu1zfd1iBS5\",\"weight\":1}]},\"creator\":\"gm\",\"name\":\"sentiment.gm\"}},\"elapsed\":29,\"trx_id\":\"7a480137930dea7f61d443b6d1a249d3f00b55f6eb0ef7754bb08599d7127588\",\"producer_block_id\":\"0e3140ac151ccf55b83360b459095d72b2cb7e7155eeb48857d439915845e68c\",\"closest_unnotified_ancestor_action_ordinal\":0,\"receipt\":{\"receiver\":\"core.vaulta\",\"act_digest\":\"1f0167de28c069fbb896c5a625d678ed36d6621395818f574dc6f1cf35646e90\",\"global_sequence\":312326404,\"recv_sequence\":49722,\"auth_sequence\":[[\"gm\",38818]],\"code_sequence\":2,\"abi_sequence\":2},\"receiver\":\"core.vaulta\"},\"irreversible\":true},{\"global_action_seq\":303212919,\"block_num\":230124246,\"block_time\":\"2025-10-19T23:38:01.500\",\"action_trace\":{\"receipt\":{\"receiver\":\"gm\",\"act_digest\":\"773d75e5632d9a2cc7bfc999bdb5017bbd4aef315ac7a28aa4758df14fde0359\",\"global_sequence\":303212919,\"recv_sequence\":11998,\"auth_sequence\":[[\"gm\",37271]],\"code_sequence\":2,\"abi_sequence\":2},\"elapsed\":1,\"trx_id\":\"7cb5ccc208a8981eba59db77111da08b671fea3f1ba63034288a03ae3ec6aabe\",\"receiver\":\"gm\",\"act\":{\"account\":\"core.vaulta\",\"name\":\"transfer\",\"authorization\":[{\"actor\":\"gm\",\"permission\":\"active\"}],\"hex_data\":\"00000000000080640000900ca86cd445be190000000000000441000000000000556c646c6b7878636f757a71672d5055425f57415f3578794d7663674e596739714a724a74414a595358693372513564746d75454b514664424472314b6a4a705344674d566277614a6147394b4e776d353364754455\",\"data\":{\"from\":\"gm\",\"to\":\"create.gm\",\"quantity\":\"0.6590 A\",\"memo\":\"ldlkxxcouzqg-PUB_WA_5xyMvcgNYg9qJrJtAJYSXi3rQ5dtmuEKQFdBDr1KjJpSDgMVbwaJaG9KNwm53duDU\"}},\"context_free\":false,\"block_num\":230124246,\"block_time\":\"2025-10-19T23:38:01.500\",\"producer_block_id\":\"0db76ad62af536449de65f9c0a5e2a9f383c5c8f771655a0743e4f03d080f2ad\",\"account_ram_deltas\":[],\"action_ordinal\":2,\"creator_action_ordinal\":1,\"closest_unnotified_ancestor_action_ordinal\":1},\"irreversible\":true},{\"global_action_seq\":303212434,\"block_num\":230123838,\"block_time\":\"2025-10-19T23:34:37.500\",\"action_trace\":{\"receipt\":{\"receiver\":\"gm\",\"act_digest\":\"5d4c70ec8184ea766d95578d325f5119ef6903e36f2d171946c86814d06d196f\",\"global_sequence\":303212434,\"recv_sequence\":11997,\"auth_sequence\":[[\"gm\",37268]],\"code_sequence\":2,\"abi_sequence\":2},\"act\":{\"account\":\"core.vaulta\",\"name\":\"transfer\",\"authorization\":[{\"actor\":\"gm\",\"permission\":\"active\"}],\"hex_data\":\"00000000000080640000900ca86cd445be190000000000000441000000000000466a6b686e6161686f66356b6f2d5055425f4b315f3652743943364b584c544332434333587a52325644464b7731353332767a7751656842576747653835437737597068544853\",\"data\":{\"memo\":\"jkhnaahof5ko-PUB_K1_6Rt9C6KXLTC2CC3XzR2VDFKw1532vzwQehBWgGe85Cw7YphTHS\",\"from\":\"gm\",\"to\":\"create.gm\",\"quantity\":\"0.6590 A\"}},\"elapsed\":1,\"trx_id\":\"eef7d65ba80535dc69f74873d87e23ea4cfc1c5b51e371fb34325087ba3601af\",\"block_time\":\"2025-10-19T23:34:37.500\",\"producer_block_id\":\"0db7693e42a8bff62bdf6ee5d50def729aa4f69095661ca9230cc53bd23f18fe\",\"action_ordinal\":2,\"closest_unnotified_ancestor_action_ordinal\":1,\"receiver\":\"gm\",\"context_free\":false,\"block_num\":230123838,\"account_ram_deltas\":[],\"creator_action_ordinal\":1},\"irreversible\":true}],\"next_cursor\":\"eyJnIjozMDMyMTI0MzQsIm8iOiJkZXNjIiwicSI6IkdwVzYrcmMxb2wwPSJ9\"}"
+}

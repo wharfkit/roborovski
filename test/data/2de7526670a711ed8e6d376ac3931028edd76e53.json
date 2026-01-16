@@ -1,0 +1,14 @@
+{
+    "request": {
+        "path": "https://jungle4.roborovski.io/account/gm/activity",
+        "params": {
+            "method": "POST",
+            "body": "{\"limit\":10,\"order\":\"desc\",\"decode\":true,\"start_date\":\"2026-01-13\",\"end_date\":\"2026-01-01\"}"
+        }
+    },
+    "status": 200,
+    "json": {
+        "results": []
+    },
+    "text": "{\"results\":[]}"
+}
